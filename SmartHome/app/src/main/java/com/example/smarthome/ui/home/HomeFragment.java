@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -17,6 +18,9 @@ import com.example.smarthome.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private Button addroomBtn;
+    private Button getroomBtn;
+    private TextView resultTextView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,6 +32,23 @@ public class HomeFragment extends Fragment {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
+            }
+        });
+        addroomBtn = root.findViewById(R.id.addroomBtn);
+        getroomBtn = root.findViewById(R.id.getroomsBtn);
+        resultTextView = root.findViewById(R.id.resultTextView);
+
+        addroomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultTextView.setText("LENIA");
+            }
+        });
+
+        getroomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resultTextView.setText("FRANCO");
             }
         });
         return root;
