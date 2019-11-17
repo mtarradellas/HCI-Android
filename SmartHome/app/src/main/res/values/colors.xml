@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorBottomNavBg">#2E6631</color>
+    <color name="colorItemSelected">#FFFFFF</color>
+    <color name="colorItemDeselected">#000000</color>
+
+    <color name="routinesBg">#C1EB83</color>
+    <color name="homeBg">#C1EB83</color>
+    <color name="favouritesBg">#C1EB83</color>
 </resources>

@@ -1,5 +1,4 @@
 package com.example.smarthome.API;
-//https://codinginflow.com/tutorials/android/volley/part-2-singleton-pattern
 
 import android.content.Context;
 

@@ -1,34 +1,106 @@
 package com.example.smarthome;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.text.TextUtils;
+import android.view.MenuItem;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.example.smarthome.API.Api;
+import com.example.smarthome.ui.FavouritesFragment;
+import com.example.smarthome.ui.HomeFragment;
+import com.example.smarthome.ui.RoutinesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import org.w3c.dom.Text;
+import java.io.Console;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements BottomNavigationView.OnNavigationItemSelectedListener,
+        HomeFragment.HomeFragmentListener {
+
+    HomeFragment homeFragment;
+    RoutinesFragment routinesFragment;
+    FavouritesFragment favouritesFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_routines, R.id.navigation_home, R.id.navigation_favourites)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        homeFragment = new HomeFragment();
+        favouritesFragment = new FavouritesFragment();
+        routinesFragment = new RoutinesFragment();
+
+        if(savedInstanceState == null) {
+            bottomNavigationView.getMenu().getItem(1).setChecked(true);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, homeFragment)
+                    .commit();
+        }
+    }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        //Fragment fragment;
+
+        int id = menuItem.getItemId();
+        switch (id) {
+            case R.id.nav_routines:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, routinesFragment)
+                        .commit();
+                break;
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, homeFragment)
+                        .commit();
+                break;
+            case R.id.nav_favourites:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, favouritesFragment)
+                        .commit();
+                break;
+        }
+        return true;
+    }
+
+    @Override
+    public void onHomeAddClick(String string) {
+        final Room room = new Room("lenias room", new RoomMeta("the Best"));
+        Api.getInstance(this.getApplicationContext()).addRoom(room, new Response.Listener<Room>() {
+            @Override
+            public void onResponse(Room response) {
+                homeFragment.updateTextView(room.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                homeFragment.updateTextView("error");
+            }
+        });
+    }
+
+    @Override
+    public void onHomeGetClick(String string) {
+        Api.getInstance(this.getApplicationContext()).getRooms(new Response.Listener<ArrayList<Room>>() {
+            @Override
+            public void onResponse(ArrayList<Room> response) {
+                homeFragment.updateTextView(TextUtils.join("-", response));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                homeFragment.updateTextView("ERROR");
+            }
+        });
     }
 }

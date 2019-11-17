@@ -13,20 +13,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class APIcontrol {
-    private static APIcontrol instance;
+public class Api {
+    private static Api instance;
     private static RequestQueue requestQueue;
     // Use IP 10.0.2.2 instead of 127.0.0.1 when running Android emulator in the
     // same computer that runs the API.
     private final String URL = "http://10.0.2.2:8080/api/";
 
-    private APIcontrol(Context context) {
+    private Api(Context context) {
         this.requestQueue = VolleySingleton.getInstance(context).getRequestQueue();
     }
 
-    public static synchronized APIcontrol getInstance(Context context) {
+    public static synchronized Api getInstance(Context context) {
         if (instance == null) {
-            instance = new APIcontrol(context);
+            instance = new Api(context);
         }
         return instance;
     }

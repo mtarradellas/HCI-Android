@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">SmartHome</string>
-    <string name="title_home">Home</string>
-    <string name="title_favourites">Favourites</string>
-    <string name="title_routines">Routines</string>
+
+    <string name="routines_fragment">Routines</string>
+    <string name="home_fragment">Home</string>
+    <string name="favourites_fragment">Favourites</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
