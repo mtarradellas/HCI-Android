@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onHomeAddClick(String string) {
-        final Room room = new Room("lenias room", new RoomMeta("the Best"));
+        final Room room = new Room("francosas room", null);
         Api.getInstance(this.getApplicationContext()).addRoom(room, new Response.Listener<Room>() {
             @Override
             public void onResponse(Room response) {

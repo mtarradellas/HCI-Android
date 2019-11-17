@@ -3,14 +3,14 @@ package com.example.smarthome;
 public class Room {
     private String id;
     private String name;
-    private RoomMeta meta;
+    private String meta;
 
-    public Room(String name, RoomMeta meta) {
+    public Room(String name, String meta) {
         this.name = name;
         this.meta = meta;
     }
 
-    public Room(String id, String name, RoomMeta meta) {
+    public Room(String id, String name, String meta) {
         this.id = id;
         this.name = name;
         this.meta = meta;
@@ -32,11 +32,11 @@ public class Room {
         return this.name;
     }
 
-    public void setMeta(RoomMeta meta) {
+    public void setMeta(String meta) {
         this.meta = meta;
     }
 
-    public RoomMeta getMeta() {
+    public String getMeta() {
         return this.meta;
     }
 

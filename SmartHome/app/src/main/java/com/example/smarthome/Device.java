@@ -16,6 +16,14 @@ public class Device implements Serializable {
         this.meta = meta;
     }
 
+    public Device(String name, String typeId, String meta, String id){
+        this.name = name;
+        this.typeId = typeId;
+        this.meta = meta;
+        this.id = id;
+    }
+
+
 //    public void onClickAction(Serializable arg, final Context context) {
 //
 //    }
