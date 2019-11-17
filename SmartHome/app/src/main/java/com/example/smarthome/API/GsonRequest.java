@@ -1,8 +1,5 @@
 package com.example.smarthome.API;
 
-//https://developer.android.com/training/volley/request-custom.html#java
-
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -17,19 +14,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 
-public class GsonRequest<T, E> extends Request<E> {
+public class GsonRequest<T1, T2> extends Request<T2> {
     private final Gson gson = new Gson();
-    private final T data;
+    private final T1 data;
     private final String token;
-    private final TypeToken<E> typeToken;
+    private final TypeToken<T2> typeToken;
     private final Map<String, String> headers;
-    private final Response.Listener<E> listener;
+    private final Response.Listener<T2> listener;
 
-    public GsonRequest(int method, String url, T data, String token, TypeToken<E> typeToken, Map<String, String> headers,
-                       Response.Listener<E> listener, Response.ErrorListener errorListener) {
+    public GsonRequest(int method, String url, T1 data, String token, TypeToken<T2> typeToken, Map<String, String> headers,
+                       Response.Listener<T2> listener, Response.ErrorListener errorListener) {
         super(method, url, errorListener);
         this.data = data;
         this.token = token;
@@ -44,7 +43,7 @@ public class GsonRequest<T, E> extends Request<E> {
     }
 
     @Override
-    protected void deliverResponse(E response) {
+    protected void deliverResponse(T2 response) {
         listener.onResponse(response);
     }
 
@@ -54,7 +53,7 @@ public class GsonRequest<T, E> extends Request<E> {
     }
 
     @Override
-    protected Response<E> parseNetworkResponse(NetworkResponse response) {
+    protected Response<T2> parseNetworkResponse(NetworkResponse response) {
         try {
             String json = new String(
                     response.data,
@@ -63,7 +62,9 @@ public class GsonRequest<T, E> extends Request<E> {
             if (token != null) {
                 JSONObject jsonObject = new JSONObject(json);
 
-                if (typeToken.getType() == Boolean.class) {
+                if (typeToken.getType() == String.class) {
+                    json = jsonObject.getString(token);
+                } else if (typeToken.getType() == Boolean.class) {
                     json = (new Boolean(jsonObject.getBoolean(token))).toString();
                 } else if (typeToken.getType() == Integer.class) {
                     json = (new Integer(jsonObject.getInt(token))).toString();
@@ -79,9 +80,13 @@ public class GsonRequest<T, E> extends Request<E> {
             }
 
             return Response.success(
-                    (E)gson.fromJson(json, typeToken.getType()),
+                    (T2)gson.fromJson(json, typeToken.getType()),
                     HttpHeaderParser.parseCacheHeaders(response));
-        } catch (JSONException | UnsupportedEncodingException | JsonSyntaxException e) {
+        } catch (JSONException e) {
+            return Response.error(new ParseError(e));
+        } catch (UnsupportedEncodingException e) {
+            return Response.error(new ParseError(e));
+        } catch (JsonSyntaxException e) {
             return Response.error(new ParseError(e));
         }
     }

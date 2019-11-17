@@ -1,7 +1,5 @@
 package com.example.smarthome;
 
-import android.content.Context;
-
 import java.io.Serializable;
 
 public class Device implements Serializable {
