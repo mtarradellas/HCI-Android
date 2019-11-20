@@ -2,10 +2,14 @@ package com.example.smarthome;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,21 +26,25 @@ public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
         HomeFragment.HomeFragmentListener {
 
-    HomeFragment homeFragment;
-    RoutinesFragment routinesFragment;
-    FavouritesFragment favouritesFragment;
-
+    private HomeFragment homeFragment;
+    private RoutinesFragment routinesFragment;
+    private FavouritesFragment favouritesFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         homeFragment = new HomeFragment();
         favouritesFragment = new FavouritesFragment();
         routinesFragment = new RoutinesFragment();
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
 
         if(savedInstanceState == null) {
             bottomNavigationView.getMenu().getItem(1).setChecked(true);
@@ -46,6 +54,26 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.icon1:
+                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.icon2:
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -75,7 +103,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onHomeAddClick(String string) {
-        final Room room = new Room("francas room", null);
+        final Room room = new Room("mama room", null);
         Api.getInstance(this.getApplicationContext()).addRoom(room, new Response.Listener<Room>() {
             @Override
             public void onResponse(Room response) {
