@@ -364,10 +364,10 @@ public class Api {
 
     public String getDeviceEvents(Device device, Response.Listener<String> listener, Response.ErrorListener errorListener) {
         String url = URL +"devices/"+device.getId()+"/events";
-        Map<String, String> headers = new HashMap<String, String>();
+        Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         GsonRequest<Object, String> request =
-                new GsonRequest<>(Request.Method.GET, url, null, "String", new TypeToken<String>(){}, null, listener, errorListener);
+                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<String>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
