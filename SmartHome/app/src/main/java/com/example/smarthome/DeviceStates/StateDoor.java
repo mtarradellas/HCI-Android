@@ -15,6 +15,14 @@ public class StateDoor implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return "StateDoor{" +
+                "status='" + status + '\'' +
+                ", lock='" + lock + '\'' +
+                '}';
+    }
+
     public String getStatus() {
         return status;
     }

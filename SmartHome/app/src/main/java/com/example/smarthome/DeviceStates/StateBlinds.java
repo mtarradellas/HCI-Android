@@ -13,6 +13,14 @@ public class StateBlinds {
 
     }
 
+    @Override
+    public String toString() {
+        return "StateBlinds{" +
+                "status='" + status + '\'' +
+                ", level=" + level +
+                '}';
+    }
+
     public String getStatus() {
         return status;
     }

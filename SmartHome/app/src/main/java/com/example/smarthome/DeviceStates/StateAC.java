@@ -24,6 +24,18 @@ public class StateAC implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return "StateAC{" +
+                "status='" + status + '\'' +
+                ", temperature=" + temperature +
+                ", verticalSwing='" + verticalSwing + '\'' +
+                ", horizontalSwing='" + horizontalSwing + '\'' +
+                ", fanSpeed='" + fanSpeed + '\'' +
+                ", mode='" + mode + '\'' +
+                '}';
+    }
+
     public String getStatus() {
         return status;
     }

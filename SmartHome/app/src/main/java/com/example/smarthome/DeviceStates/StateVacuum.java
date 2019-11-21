@@ -4,18 +4,26 @@ import java.io.Serializable;
 
 public class StateVacuum implements Serializable {
     private String status;
-    //pausado es parte del estado?
     private String mode;
-    private String ubicationId;
+    private int batteryLevel;
 
-    public StateVacuum(String status, String ubicationId, String mode) {
+    public StateVacuum(String status, int batteryLevel, String mode) {
         this.mode = mode;
         this.status = status;
-        this.ubicationId = ubicationId;
+        this.batteryLevel = batteryLevel;
     }
 
     public StateVacuum() {
 
+    }
+
+    @Override
+    public String toString() {
+        return "StateVacuum{" +
+                "status='" + status + '\'' +
+                ", mode='" + mode + '\'' +
+                ", batteryLevel=" + batteryLevel +
+                '}';
     }
 
     public String getStatus() {
@@ -26,8 +34,12 @@ public class StateVacuum implements Serializable {
         return mode;
     }
 
-    public String getUbicationId() {
-        return ubicationId;
+    public int getBatteryLevel() {
+        return batteryLevel;
+    }
+
+    public void setBatteryLevel(int batteryLevel) {
+        this.batteryLevel = batteryLevel;
     }
 
     public void setStatus(String status) {
@@ -38,7 +50,4 @@ public class StateVacuum implements Serializable {
         this.mode = mode;
     }
 
-    public void setUbicationId(String ubicationId) {
-        this.ubicationId = ubicationId;
-    }
 }

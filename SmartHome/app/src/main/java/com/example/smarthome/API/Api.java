@@ -104,7 +104,7 @@ public class Api {
     }
 
 
-    ///////////////     DEVICES     ////////////////  me fallaron cosas en algunos metodos de device, lo mas probable es que el resto falle tambien
+    ///////////////     DEVICES     ////////////////
 
     public String createDevice(Device device, Response.Listener<Device> listener, Response.ErrorListener errorListener) {
         String url = URL + "devices/";
@@ -141,7 +141,7 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-        //dejo de andar tambien
+        //tested
         return uuid;
     }
 
@@ -261,105 +261,111 @@ public class Api {
 
     ////////////        STATES      ////////////////////////
 
+    public String getStateAc(String deviceId, Response.Listener<StateAC> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateAC> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateAC>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        //tested
+        return uuid;
+    }
+
+    public String getStateAlarm(String deviceId, Response.Listener<StateAlarm> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateAlarm> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateAlarm>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+    //tested
+        return uuid;
+    }
+
+    public String getStateBlinds(String deviceId, Response.Listener<StateBlinds> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateBlinds> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateBlinds>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        //tested
+        return uuid;
+    }
+
+    public String getStateDoor(String deviceId, Response.Listener<StateDoor> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateDoor> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateDoor>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        //tested
+        return uuid;
+    }
+
+
+    public String getStateLamp(String deviceId, Response.Listener<StateLamp> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateLamp> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateLamp>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        //tested
+        return uuid;
+    }
+
+    public String getStateStereo(String deviceId, Response.Listener<StateStereo> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateStereo> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateStereo>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        //tested
+        return uuid;
+    }
+
+    public String getStateVacuum(String deviceId, Response.Listener<StateVacuum> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId +"/" + "state";
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<Object, StateVacuum> request =
+                new GsonRequest<>(Request.Method.GET, url, null , "result", new TypeToken<StateVacuum>(){}, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        //tested
+        return uuid;
+    }
+
+///////////////////////////////////// EVENTS ////////////////////////////////
+
     public String runAction(Action action, Response.Listener<Object> listener, Response.ErrorListener errorListener) {
         String url = URL + "devices/" + action.getDeviceId().getId() +"/" + action.getActionName();
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         GsonRequest<List<String>, Object> request =
-                new GsonRequest<>(Request.Method.PUT, url, action.getParams(), null, new TypeToken<Object>(){}, headers, listener, errorListener);
+                new GsonRequest<>(Request.Method.GET, url, action.getParams(), null, new TypeToken<Object>(){}, headers, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
         return uuid;
     }
-
-    public String getStateAc(Device device, Response.Listener<StateAC> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateAC> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateAC>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
-
-    public String getStateAlarm(Device device, Response.Listener<StateAlarm> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateAlarm> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateAlarm>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-
-        return uuid;
-    }
-
-    public String getStateBlinds(Device device, Response.Listener<StateBlinds> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateBlinds> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateBlinds>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
-
-    public String getStateDoor(Device device, Response.Listener<StateDoor> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateDoor> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateDoor>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
-
-
-    public String getStateLamp(Device device, Response.Listener<StateLamp> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateLamp> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateLamp>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
-
-    public String getStateStereo(Device device, Response.Listener<StateStereo> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateStereo> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateStereo>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
-
-    public String getStateVacuum(Device device, Response.Listener<StateVacuum> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId() +"/" + "getState";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, StateVacuum> request =
-                new GsonRequest<>(Request.Method.PUT, url, null , "result", new TypeToken<StateVacuum>(){}, headers, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
-
-/////////////////////////////////////
 
     public String getDeviceEvents(Device device, Response.Listener<String> listener, Response.ErrorListener errorListener) {
         String url = URL +"devices/"+device.getId()+"/events";
@@ -372,6 +378,8 @@ public class Api {
         requestQueue.add(request);
         return uuid;
     }
+
+    //////////////////////////////////////
 
     public void cancelRequest(String uuid) {
         if ((uuid != null) && (requestQueue != null)) {

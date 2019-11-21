@@ -6,18 +6,18 @@ public class Device implements Serializable {
     private String id;
     private String name;
     private Type type ;
-    private Meta meta; //will be empty
+    private DeviceMeta meta; //has boolean favourite
 
 
 
 
-    public Device(String name, Type typeId, Meta meta){
+    public Device(String name, Type typeId, DeviceMeta meta){
         this.name = name;
         this.type = typeId;
         this.meta = meta;
     }
 
-    public Device(String id, String name, Type typeId, Meta meta){
+    public Device(String id, String name, Type typeId, DeviceMeta meta){
         this.name = name;
         this.type = typeId;
         this.meta = meta;
@@ -25,6 +25,12 @@ public class Device implements Serializable {
 
     }
 
+    public Boolean isFav() {
+        if(meta == null){
+            return false;
+        }
+        return meta.getFavourite();
+    }
 
     public void setType(Type type) {
         this.type = type;
@@ -48,17 +54,20 @@ public class Device implements Serializable {
         this.name = name;
     }
 
-    public void setMeta(Meta meta) {
+    public void setMeta(DeviceMeta meta) {
         this.meta = meta;
     }
 
-    public Meta getMeta() {
+    public DeviceMeta getMeta() {
         return this.meta;
     }
 
     @Override
     public String toString() {
-        return "Id: " + this.id + "; typeId: "+ this.type.getTypeId() + "; name: "+ this.name+"; meta: "+ this.meta.toString();
+        if(meta == null){
+            return "Id: " + this.id + "; typeId: "+ this.type.getTypeId() + "; name: "+ this.name;
+        }
+        return "Id: " + this.id + "; typeId: "+ this.type.getTypeId() + "; name: "+ this.name+ "favourite: "+ meta.getFavourite().toString();
     }
 
     @Override
