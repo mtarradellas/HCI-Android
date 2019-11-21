@@ -6,18 +6,18 @@ public class Device implements Serializable {
     private String id;
     private String name;
     private Type type ;
-    private String meta; //will be empty
+    private Meta meta; //will be empty
 
 
 
 
-    public Device(String name, Type typeId, String meta){
+    public Device(String name, Type typeId, Meta meta){
         this.name = name;
         this.type = typeId;
         this.meta = meta;
     }
 
-    public Device(String id, String name, Type typeId, String meta){
+    public Device(String id, String name, Type typeId, Meta meta){
         this.name = name;
         this.type = typeId;
         this.meta = meta;
@@ -25,10 +25,6 @@ public class Device implements Serializable {
 
     }
 
-
-//    public void onClickAction(Serializable arg, final Context context) {
-//
-//    }
 
     public void setType(Type type) {
         this.type = type;
@@ -52,17 +48,17 @@ public class Device implements Serializable {
         this.name = name;
     }
 
-    public void setMeta(String meta) {
+    public void setMeta(Meta meta) {
         this.meta = meta;
     }
 
-    public String getMeta() {
+    public Meta getMeta() {
         return this.meta;
     }
 
     @Override
     public String toString() {
-        return "Id: " + this.id + "; typeId: "+ this.type.getTypeId() + "; name: "+ this.name+"; meta: "+ this.meta;
+        return "Id: " + this.id + "; typeId: "+ this.type.getTypeId() + "; name: "+ this.name+"; meta: "+ this.meta.toString();
     }
 
     @Override
