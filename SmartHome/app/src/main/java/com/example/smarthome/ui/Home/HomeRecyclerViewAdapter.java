@@ -37,9 +37,9 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.textView1.setText(data.get(position).getText1());
-        holder.textView2.setText(data.get(position).getText2());
-        holder.img.setImageResource(data.get(position).getImageResource());
+        holder.textView1.setText(data.get(position).getRoom().getName());
+        holder.textView2.setText(data.get(position).getRoom().getMeta());
+        holder.img.setImageResource(data.get(position).getImg());
 
 
     }

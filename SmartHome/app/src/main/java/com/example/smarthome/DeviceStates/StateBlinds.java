@@ -1,4 +1,4 @@
-package com.example.smarthome.ui;
+package com.example.smarthome.DeviceStates;
 
 public class StateBlinds {
     private String status;

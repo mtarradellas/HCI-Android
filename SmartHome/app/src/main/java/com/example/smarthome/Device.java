@@ -1,7 +1,5 @@
 package com.example.smarthome;
 
-import com.example.smarthome.ui.Type;
-
 import java.io.Serializable;
 
 public class Device implements Serializable {
