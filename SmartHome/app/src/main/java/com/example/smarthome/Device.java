@@ -1,32 +1,40 @@
 package com.example.smarthome;
 
+import com.example.smarthome.ui.Type;
+
 import java.io.Serializable;
 
 public class Device implements Serializable {
     private String id;
     private String name;
-    private String typeId;
+    private Type type ;
     private String meta; //will be empty
 
 
 
-    public Device(String name, String typeId, String meta){
+
+    public Device(String name, Type typeId, String meta){
         this.name = name;
-        this.typeId = typeId;
+        this.type = typeId;
         this.meta = meta;
     }
 
-    public Device(String name, String typeId, String meta, String id){
+    public Device(String id, String name, Type typeId, String meta){
         this.name = name;
-        this.typeId = typeId;
+        this.type = typeId;
         this.meta = meta;
         this.id = id;
+
     }
 
 
 //    public void onClickAction(Serializable arg, final Context context) {
 //
 //    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
 
     public void setId(String id){
         this.id = id;
@@ -36,7 +44,7 @@ public class Device implements Serializable {
         return id;
     }
 
-    public String getTypeId() { return typeId; }
+    public Type getTypeId() { return type; }
 
     public String getName() {
         return this.name;
@@ -56,7 +64,7 @@ public class Device implements Serializable {
 
     @Override
     public String toString() {
-        return "Id: " + this.id + "; typeId: "+ this.typeId + "; name: "+ this.name+"; meta: "+ this.meta;
+        return "Id: " + this.id + "; typeId: "+ this.type.getTypeId() + "; name: "+ this.name+"; meta: "+ this.meta;
     }
 
     @Override
@@ -66,6 +74,7 @@ public class Device implements Serializable {
         }
 
         Device d = (Device)o;
-        return this.name.equals(d.name) && this.typeId.equals(d.typeId) && this.meta.equals(d.meta);
+        return this.name.equals(d.name) && this.type.equals(d.type) && this.meta.equals(d.meta);
     }
+
 }
