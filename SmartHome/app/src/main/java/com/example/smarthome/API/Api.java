@@ -53,7 +53,7 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+    //tested
         return uuid;
     }
 
@@ -66,7 +66,7 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //TESTED
         return uuid;
     }
 
@@ -77,7 +77,7 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
@@ -88,7 +88,7 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
@@ -99,11 +99,12 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
+        //tested
         return uuid;
     }
 
 
-    ///////////////     DEVICES     ////////////////
+    ///////////////     DEVICES     ////////////////  me fallaron cosas en algunos metodos de device, lo mas probable es que el resto falle tambien
 
     public String createDevice(Device device, Response.Listener<Device> listener, Response.ErrorListener errorListener) {
         String url = URL + "devices/";
@@ -114,20 +115,20 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
-    public String getDevices(Response.Listener<List<Device>> listener, Response.ErrorListener errorListener) {
-        String url = URL +"devices";
+    public String getDevices(Response.Listener<ArrayList<Device>> listener, Response.ErrorListener errorListener) {
+        String url = URL +"devices/";
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
-        GsonRequest<Object, List<Device>> request =
-                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<List<Device>>(){}, null, listener, errorListener);
+        GsonRequest<Object, ArrayList<Device>> request =
+                new GsonRequest<>(Request.Method.GET, url, null, "devices", new TypeToken<ArrayList<Device>>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+    //tested
         return uuid;
     }
 
@@ -140,18 +141,18 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //dejo de andar tambien
         return uuid;
     }
 
-    public String deleteDevice(Device device, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + device.getId();
+    public String deleteDevice(String deviceId, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
+        String url = URL + "devices/" + deviceId;
         GsonRequest<Object, Boolean> request =
                 new GsonRequest<>(Request.Method.DELETE, url, null, "result", new TypeToken<Boolean>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
@@ -159,22 +160,25 @@ public class Api {
         String url = URL + "devices/" + device.getId();
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
+        Device apiDevice = new Device(device.getId(), device.getName(), null, device.getMeta());
         GsonRequest<Device, Boolean> request =
-                new GsonRequest<>(Request.Method.PUT, url, device, "result", new TypeToken<Boolean>(){}, headers, listener, errorListener);
+                new GsonRequest<>(Request.Method.PUT, url, apiDevice, "result", new TypeToken<Boolean>(){}, headers, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
-    public String getRoomDevices(Room room, Response.Listener<List<Device>> listener, Response.ErrorListener errorListener) {
-        String url = URL + "rooms/" + room.getId() + "/devices/";
-        GsonRequest<Object, List<Device>> request =
-                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<List<Device>>(){}, null, listener, errorListener);
+
+    public String getRoomDevices(String roomId, Response.Listener<ArrayList<Device>> listener, Response.ErrorListener errorListener) {
+        String url = URL + "rooms/" + roomId + "/devices/";
+        GsonRequest<Object, ArrayList<Device>> request =
+                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<ArrayList<Device>>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
+        //tested
         return uuid;
     }
 
@@ -185,21 +189,22 @@ public class Api {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         GsonRequest<Object, Routine> request =
-                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<Routine>(){}, null, listener, errorListener);
+                new GsonRequest<>(Request.Method.GET, url, null, "routine", new TypeToken<Routine>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
-    public String getRoutines(Response.Listener<List<Routine>> listener, Response.ErrorListener errorListener) {
+    public String getRoutines(Response.Listener<ArrayList<Routine>> listener, Response.ErrorListener errorListener) {
         String url = URL + "routines/";
-        GsonRequest<Object, List<Routine>> request =
-                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<List<Routine>>(){}, null, listener, errorListener);
+        GsonRequest<Object, ArrayList<Routine>> request =
+                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<ArrayList<Routine>>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
+        //tested
         return uuid;
     }
 
@@ -212,7 +217,7 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+    //tested
         return uuid;
     }
 
@@ -225,38 +230,39 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
-    public String deleteRoutine(Routine routine, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
-        String url = URL + "routines/" + routine.getId();
+    public String deleteRoutine(String routineId, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
+        String url = URL + "routines/" + routineId;
         GsonRequest<Object, Boolean> request =
                 new GsonRequest<>(Request.Method.DELETE, url, null, "result", new TypeToken<Boolean>(){}, null, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
-    public String executeRoutine(Routine routine, Response.Listener<Object> listener, Response.ErrorListener errorListener) {
-        String url = URL + "routines/" + routine.getId() + "/execute";
+    //returns boolean array, one boolean for each action in the routine, true if executed, false if not
+    public String executeRoutine(String routineId, Response.Listener<ArrayList<Boolean>> listener, Response.ErrorListener errorListener) {
+        String url = URL + "routines/" + routineId + "/execute";
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
-        GsonRequest<Object, Object> request =
-                new GsonRequest<>(Request.Method.PUT, url, null, null, new TypeToken<Object>(){}, headers, listener, errorListener);
+        GsonRequest<Object, ArrayList<Boolean>> request =
+                new GsonRequest<>(Request.Method.PUT, url, null, "result", new TypeToken<ArrayList<Boolean>>(){}, headers, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
+        //tested
         return uuid;
     }
 
     ////////////        STATES      ////////////////////////
 
     public String runAction(Action action, Response.Listener<Object> listener, Response.ErrorListener errorListener) {
-        String url = URL + "devices/" + action.getDeviceId() +"/" + action.getActionName();
+        String url = URL + "devices/" + action.getDeviceId().getId() +"/" + action.getActionName();
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         GsonRequest<List<String>, Object> request =
@@ -264,7 +270,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -277,7 +282,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -303,7 +307,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -316,7 +319,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -330,7 +332,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -343,7 +344,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -356,7 +356,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
@@ -371,7 +370,6 @@ public class Api {
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
-
         return uuid;
     }
 
