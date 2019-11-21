@@ -58,9 +58,9 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         list = new ArrayList<>();
-        list.add(new HomeItem(R.drawable.ic_child_care_black_24dp, "Baby", "feliz"));
-        list.add(new HomeItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Teen", "quiere morir"));
-        list.add(new HomeItem(R.drawable.ic_sentiment_very_dissatisfied_black_24dp, "teen", "al fin se mato"));
+        list.add(new HomeItem(new Room("Lenias Room", "da best"), R.drawable.ic_child_care_black_24dp));
+        list.add(new HomeItem(new Room("Francos Room", "not as good"), R.drawable.ic_sentiment_dissatisfied_black_24dp));
+        list.add(new HomeItem(new Room("Jardin", "Donde estan los arboles wink wink"), R.drawable.ic_sentiment_very_dissatisfied_black_24dp));
 
     }
 

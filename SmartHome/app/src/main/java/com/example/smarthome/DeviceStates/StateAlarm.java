@@ -1,4 +1,4 @@
-package com.example.smarthome.ui;
+package com.example.smarthome.DeviceStates;
 
 import java.io.Serializable;
 
