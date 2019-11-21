@@ -10,15 +10,15 @@ public class Routine implements Serializable{
     private String id;
     private String name;
     private ArrayList<Action> actions;
-    private String meta;
+    private Meta meta;
 
-    public Routine(String id, String name, ArrayList<Action> actions, String meta){
+    public Routine(String id, String name, ArrayList<Action> actions, Meta meta){
         this(name, actions, meta);
         this.id = id;
 
     }
 
-    public Routine(String name, ArrayList<Action> actions, String meta){
+    public Routine(String name, ArrayList<Action> actions, Meta meta){
         this.meta = meta;
         this.actions = actions;
         this.name = name;
@@ -40,11 +40,27 @@ public class Routine implements Serializable{
                 '}';
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setActions(ArrayList<Action> actions) {
+        this.actions = actions;
+    }
+
+    public void setMeta(Meta meta) {
+        this.meta = meta;
+    }
+
     public List<Action> getActions() {
         return actions;
     }
     public String getName(){return name;}
-    public String getMeta(){return meta;}
+    public Meta getMeta(){return meta;}
     public String getId(){return id;}
 
 }

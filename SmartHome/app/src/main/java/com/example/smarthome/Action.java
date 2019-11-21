@@ -1,23 +1,26 @@
 package com.example.smarthome;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Action implements Serializable {
     private DeviceId device; //must only have id
     private String actionName;
     private List<String> params;//if action has no params it still has to be initialized as an empty list
-    private String meta;
+    private Meta meta;
 
-    public Action(DeviceId device, String name, List<String> params, String meta){
-        this(device, name, params);
+    public Action(DeviceId device, String name, List<String> params, Meta meta){
+        this(device, name);
+        this.params = params;
         this.meta = meta;
     }
 
-    public Action(DeviceId device, String name, List<String> params){
+    public Action(DeviceId device, String name){
         this.device = device;
         this.actionName = name;
-        this.params = params;
+        this.params = new ArrayList<>();
+        this.meta = new Meta(null);
     }
 
     @Override
