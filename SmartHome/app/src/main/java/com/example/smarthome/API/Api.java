@@ -355,29 +355,32 @@ public class Api {
 
 ///////////////////////////////////// EVENTS ////////////////////////////////
 
-    public String runAction(Action action, Response.Listener<Object> listener, Response.ErrorListener errorListener) {
+    //returns true if executed correctly or false otherwise. Take into account that if a lamp is turned on and the action tuns on the lamp, it will return false
+    public String runAction(Action action, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
         String url = URL + "devices/" + action.getDeviceId().getId() +"/" + action.getActionName();
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
-        GsonRequest<List<String>, Object> request =
-                new GsonRequest<>(Request.Method.GET, url, action.getParams(), null, new TypeToken<Object>(){}, headers, listener, errorListener);
+        GsonRequest<List<String>, Boolean> request =
+                new GsonRequest<>(Request.Method.PUT, url, action.getParams(), "result", new TypeToken<Boolean>(){}, headers, listener, errorListener);
         String uuid = UUID.randomUUID().toString();
         request.setTag(uuid);
         requestQueue.add(request);
+        //tested
         return uuid;
     }
 
-    public String getDeviceEvents(Device device, Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        String url = URL +"devices/"+device.getId()+"/events";
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        GsonRequest<Object, String> request =
-                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<String>(){}, null, listener, errorListener);
-        String uuid = UUID.randomUUID().toString();
-        request.setTag(uuid);
-        requestQueue.add(request);
-        return uuid;
-    }
+//    public String getDeviceEvents(String deviceId, Response.Listener<String> listener, Response.ErrorListener errorListener) {
+//        String url = URL +"devices/"+deviceId+"/events";
+//        Map<String, String> headers = new HashMap<>();
+//        headers.put("Content-Type", "application/json");
+//        GsonRequest<Object, String> request =
+//                new GsonRequest<>(Request.Method.GET, url, null, "result", new TypeToken<String>(){}, null, listener, errorListener);
+//        String uuid = UUID.randomUUID().toString();
+//        request.setTag(uuid);
+//        requestQueue.add(request);
+//        //what the fuck.....
+//        return uuid;
+//    }
 
     //////////////////////////////////////
 
