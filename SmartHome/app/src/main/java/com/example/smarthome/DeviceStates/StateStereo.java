@@ -15,6 +15,14 @@ public class StateStereo implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return "StateStereo{" +
+                "volume=" + volume +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
     public int getVolume() {
         return volume;
     }

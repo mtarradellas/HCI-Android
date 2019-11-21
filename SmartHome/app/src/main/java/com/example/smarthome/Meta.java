@@ -6,6 +6,7 @@ import java.util.Objects;
 public class Meta implements Serializable {
     private String string;
 
+
     public Meta(String string) {
         this.string = string;
     }

@@ -17,6 +17,15 @@ public class StateLamp implements Serializable {
 
     }
 
+    @Override
+    public String toString() {
+        return "StateLamp{" +
+                "status='" + status + '\'' +
+                ", color='" + color + '\'' +
+                ", brightness=" + brightness +
+                '}';
+    }
+
     public int getBrightness() {
         return brightness;
     }

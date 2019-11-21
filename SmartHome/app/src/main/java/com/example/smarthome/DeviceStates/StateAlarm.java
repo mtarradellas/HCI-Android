@@ -12,4 +12,11 @@ public class StateAlarm implements Serializable {
     public String getStatus() {
         return status;
     }
+
+    @Override
+    public String toString() {
+        return "StateAlarm{" +
+                "status='" + status + '\'' +
+                '}';
+    }
 }
