@@ -5,22 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.example.smarthome.API.Api;
-import com.example.smarthome.ui.FavouritesFragment;
-import com.example.smarthome.ui.HomeFragment;
-import com.example.smarthome.ui.RoutinesFragment;
+import com.example.smarthome.ui.Favourites.FavouritesFragment;
+import com.example.smarthome.ui.Home.HomeFragment;
+import com.example.smarthome.ui.Routines.RoutinesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.io.Console;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
@@ -99,36 +92,5 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
         return true;
-    }
-
-    @Override
-    public void onHomeAddClick(String string) {
-        final Room room = new Room("mama room", null);
-        Api.getInstance(this.getApplicationContext()).addRoom(room, new Response.Listener<Room>() {
-            @Override
-            public void onResponse(Room response) {
-                homeFragment.updateTextView(room.toString());
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                homeFragment.updateTextView("error");
-            }
-        });
-    }
-
-    @Override
-    public void onHomeGetClick(String string) {
-        Api.getInstance(this.getApplicationContext()).getRooms(new Response.Listener<ArrayList<Room>>() {
-            @Override
-            public void onResponse(ArrayList<Room> response) {
-                homeFragment.updateTextView(TextUtils.join("-", response));
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                homeFragment.updateTextView("ERROR");
-            }
-        });
     }
 }

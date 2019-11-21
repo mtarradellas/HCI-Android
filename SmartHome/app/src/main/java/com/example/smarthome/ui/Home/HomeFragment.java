@@ -1,20 +1,23 @@
-package com.example.smarthome.ui;
+package com.example.smarthome.ui.Home;
 
 
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.smarthome.R;
+import com.example.smarthome.Room;
 
-import java.io.Console;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -23,53 +26,44 @@ import java.io.Console;
 public class HomeFragment extends Fragment {
 
     private HomeFragmentListener listener;
-    private Button addBtn;
-    private Button getBtn;
-    private TextView resultTextView;
+    private ArrayList<Room> roomArrayList;
+    private RecyclerView recyclerView;
+    private List<HomeItem> list;
 
     public interface HomeFragmentListener {
-        void onHomeAddClick(String string);
-        void onHomeGetClick(String string);
+
     }
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = (RecyclerView) v.findViewById(R.id.homeRecyclerView);
+        HomeRecyclerViewAdapter recyclerViewAdapter = new HomeRecyclerViewAdapter(getContext(), list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(recyclerViewAdapter);
 
-        addBtn = v.findViewById(R.id.addBtn);
-        getBtn = v.findViewById(R.id.getBtn);
-        resultTextView = v.findViewById(R.id.resultTextView);
-        resultTextView.setText("HI");
 
-        addBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onHomeAddClick("ADD ROOM");
-                //resultTextView.setText("KILL");
-            }
-        });
-
-        getBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onHomeGetClick("GET ROOM");
-                //resultTextView.setText("DIE");
-            }
-        });
 
         return v;
     }
 
-    public void updateTextView(String string) {
-        resultTextView.setText(string);
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        list = new ArrayList<>();
+        list.add(new HomeItem(R.drawable.ic_child_care_black_24dp, "Baby", "feliz"));
+        list.add(new HomeItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Teen", "quiere morir"));
+        list.add(new HomeItem(R.drawable.ic_sentiment_very_dissatisfied_black_24dp, "teen", "al fin se mato"));
+
     }
+
 
     @Override
     public void onAttach(Context context) {
