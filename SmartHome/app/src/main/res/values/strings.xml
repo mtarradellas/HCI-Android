@@ -5,6 +5,13 @@
     <string name="home_fragment">Home</string>
     <string name="favourites_fragment">Favourites</string>
 
+    <string name="confirm_btn">Confirm</string>
+    <string name="cancel_btn">Cancel</string>
+
+    <string name="add_room_img_desc">New room icon</string>
+    <string name="add_room_text_view">ADD ROOM</string>
+    <string name="add_room_hint">Enter name</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

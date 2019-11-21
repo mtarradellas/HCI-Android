@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
 
-    <color name="colorBottomNavBg">#2E6631</color>
+    <color name="colorBottomNavBg">#F3C845</color>
     <color name="colorItemSelected">#FFFFFF</color>
     <color name="colorItemDeselected">#000000</color>
 
-    <color name="routinesBg">#C1EB83</color>
-    <color name="homeBg">#C1EB83</color>
-    <color name="favouritesBg">#C1EB83</color>
+    <color name="routinesBg">#E9E6E6</color>
+    <color name="homeBg">#FFFFFF</color>
+    <color name="favouritesBg">#E9E6E6</color>
 </resources>

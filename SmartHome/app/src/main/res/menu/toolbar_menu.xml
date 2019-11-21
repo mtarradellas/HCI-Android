@@ -2,12 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/icon1"
+        android:id="@+id/settings"
         android:title="Settings"
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/icon2"
+        android:id="@+id/add_room"
+        android:title="Add Room"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/add_routine"
+        android:title="Add Routine"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/about"
         android:title="About Us"
         app:showAsAction="never"/>
 </menu>
