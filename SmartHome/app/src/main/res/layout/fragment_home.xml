@@ -13,8 +13,11 @@
 
         <TextView
             android:id="@+id/homeBackTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginEnd="10sp"
+            android:gravity="center"
             android:text="@string/loading"
             app:layout_constraintBottom_toBottomOf="@+id/homeSwipeRefresh"
             app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +25,9 @@
             app:layout_constraintTop_toTopOf="@+id/homeSwipeRefresh" />
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/homeSwipeRefresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/homeSwipeRefresh">
+            android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/homeRecyclerView"
@@ -34,7 +37,6 @@
             </androidx.recyclerview.widget.RecyclerView>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

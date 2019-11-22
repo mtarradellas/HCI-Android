@@ -21,7 +21,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
-        HomeFragment.HomeFragmentListener,
         AddRoomDialog.AddRoomListener {
 
     private HomeFragment homeFragment;
@@ -38,8 +37,6 @@ public class MainActivity extends AppCompatActivity
         homeFragment = new HomeFragment();
         favouritesFragment = new FavouritesFragment();
         routinesFragment = new RoutinesFragment();
-
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -121,7 +118,7 @@ public class MainActivity extends AppCompatActivity
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                homeFragment.setHomeBackText("No connection");
             }
         });
     }

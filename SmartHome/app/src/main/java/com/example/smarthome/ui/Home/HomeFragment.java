@@ -1,21 +1,17 @@
 package com.example.smarthome.ui.Home;
 
 
-import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -24,7 +20,6 @@ import com.example.smarthome.R;
 import com.example.smarthome.Room;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -32,16 +27,11 @@ import java.util.List;
  */
 public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
-    private HomeFragmentListener listener;
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
 
     private ArrayList<HomeItem> homeItems;
     private TextView homeBackTextView;
-
-    public interface HomeFragmentListener {
-
-    }
 
     public HomeFragment() {
         // Required empty public constructor
@@ -79,13 +69,17 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         Api.getInstance(getContext()).getRooms(new Response.Listener<ArrayList<Room>>() {
             @Override
             public void onResponse(ArrayList<Room> response) {
-                homeItems.clear();
-                String name;
-                for (Room room : response) {
-                    name = room.getName();
-                    homeItems.add(new HomeItem(new Room(name), R.drawable.ic_local_hotel_black_24dp));
+                if (response.size() == 0) {
+                    homeBackTextView.setText(R.string.home_list_empty);
+                } else {
+                    homeItems.clear();
+                    String name;
+                    for (Room room : response) {
+                        name = room.getName();
+                        homeItems.add(new HomeItem(new Room(name), R.drawable.ic_local_hotel_black_24dp));
+                    }
+                    homeBackTextView.setText("");
                 }
-                homeBackTextView.setText("");
                 HomeRecyclerViewAdapter recyclerViewAdapter = new HomeRecyclerViewAdapter(getContext(), homeItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 recyclerView.setAdapter(recyclerViewAdapter);
@@ -93,31 +87,20 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                homeItems.clear();
+                homeBackTextView.setText(R.string.home_no_connection);
             }
         });
+    }
+
+    public void setHomeBackText(String text) {
+        homeBackTextView.setText(text);
     }
 
     @Override
     public void onRefresh() {
         refreshRooms();
         swipeRefreshLayout.setRefreshing(false);
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof HomeFragmentListener) {
-            listener = (HomeFragmentListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement HomeFragmentListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        listener = null;
     }
 
 }
