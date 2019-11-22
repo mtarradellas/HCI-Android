@@ -1,6 +1,9 @@
 package com.example.smarthome;
 
-public class Room {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Room implements Parcelable {
     private String id;
     private String name;
     private Meta meta;
@@ -20,6 +23,23 @@ public class Room {
         this.name = name;
         this.meta = new Meta(null);
     }
+
+    protected Room(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+    }
+
+    public static final Creator<Room> CREATOR = new Creator<Room>() {
+        @Override
+        public Room createFromParcel(Parcel in) {
+            return new Room(in);
+        }
+
+        @Override
+        public Room[] newArray(int size) {
+            return new Room[size];
+        }
+    };
 
     public void setId(String id) {
         this.id = id;
@@ -61,5 +81,16 @@ public class Room {
             else
                 return this.getName();
         }
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
     }
 }
