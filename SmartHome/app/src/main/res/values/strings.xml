@@ -15,15 +15,17 @@
 
     <!-- Routines View -->
     <string name="routines_fragment">Routines</string>
-    <string name="routines_item_icon">routine item icon</string>
     <string name="routines_no_connection">Could not load routines list. Please check your internet connection and try again.</string>
     <string name="routines_list_empty">No routines registered. To add new routine click the options panel in the top right corner, then \'add routine\'.</string>
+    <string name="routines_item_icon">routine item icon</string>
+    <string name="routines_item_start">Run</string>
 
     <!-- Favourites View -->
     <string name="favourites_fragment">Favourites</string>
-    <string name="favourites_item_icon">favourite item icon</string>
     <string name="favourites_no_connection">Could not load favourites list. Please check your internet connection and try again.</string>
     <string name="favourites_list_empty">No favourite devices registered. To add new favourite first add a device to a room and then click the heart symbol in the device settings.</string>
+    <string name="favourites_item_icon">favourite item icon</string>
+    <string name="favourites_item_heart">favourite heart icon</string>
 
     <!-- Add Room View -->
     <string name="add_room_img_desc">New room icon</string>
