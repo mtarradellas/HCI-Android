@@ -32,4 +32,7 @@
     <string name="add_room_text_view">ADD ROOM</string>
     <string name="add_room_hint">Enter name</string>
 
+    <!-- Room View -->
+    <string name="room_view_text_view">ROOM VIEW</string>
+
 </resources>
