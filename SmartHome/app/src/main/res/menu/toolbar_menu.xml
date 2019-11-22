@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="@string/settings_opt"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/add_room"
-        android:title="Add Room"
+        android:title="@string/addroom_opt"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/add_routine"
-        android:title="Add Routine"
+        android:title="@string/addroutine_opt"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/about"
-        android:title="About Us"
+        android:title="@string/about_opt"
         app:showAsAction="never"/>
 </menu>
