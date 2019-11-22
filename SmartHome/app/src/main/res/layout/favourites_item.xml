@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/favourites_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:baselineAligned="true"
     android:orientation="horizontal"
-    android:padding="5dp"
-    android:id="@+id/favourites_item">
+    android:padding="5dp">
 
 
-    <ImageView
-        android:id="@+id/favourites_imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:contentDescription="@string/favourites_item_icon"
-        android:src="@drawable/lenia_sga" />
-
-    <TextView
-        android:id="@+id/favouritesTitle"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="10sp"
-        android:textStyle="bold" />
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/favourites_imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/favourites_item_icon"
+            android:src="@drawable/lenia_sga"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/favouritesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/favourites_imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <ImageButton
+            android:id="@+id/favouritesHeart"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/favourites_item_heart"
+            android:src="@drawable/ic_favorite_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </LinearLayout>

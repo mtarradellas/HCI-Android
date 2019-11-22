@@ -86,7 +86,7 @@ public class FavouritesFragment extends Fragment implements SwipeRefreshLayout.O
                         type = device.getTypeId();
                         meta = device.getMeta();
                         if (meta.getFavourite()) {
-                            favouritesItems.add(new FavouritesItem(new Device(name, type, meta), R.drawable.ic_sentiment_very_dissatisfied_black_24dp));
+                            favouritesItems.add(new FavouritesItem(new Device(name, type, meta), R.drawable.ic_lightbulb_outline_black_24dp));
                         }
                     }
                     if (favouritesItems.size() == 0) {

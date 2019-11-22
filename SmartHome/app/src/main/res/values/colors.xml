@@ -8,7 +8,7 @@
     <color name="colorItemSelected">#FFFFFF</color>
     <color name="colorItemDeselected">#000000</color>
 
-    <color name="routinesBg">#E9E6E6</color>
-    <color name="homeBg">#FFFFFF</color>
-    <color name="favouritesBg">#E9E6E6</color>
+    <color name="routinesBg">#F5F5F5</color>
+    <color name="homeBg">#F5F5F5</color>
+    <color name="favouritesBg">#F5F5F5</color>
 </resources>
