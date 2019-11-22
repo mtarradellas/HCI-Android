@@ -42,7 +42,6 @@ public class AddRoomDialog extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         String name = inputEditText.getText().toString();
                         addRoomListener.applyAddRoom(name);
-
                     }
                 });
         return builder.create();

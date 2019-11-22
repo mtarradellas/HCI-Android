@@ -1,4 +1,4 @@
-package com.example.smarthome.ui.Home;
+package com.example.smarthome.ui.Favourites;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,15 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smarthome.R;
+import com.example.smarthome.ui.Home.HomeItem;
+import com.example.smarthome.ui.Home.HomeRecyclerViewAdapter;
 
 import java.util.List;
 
-public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerViewAdapter.MyViewHolder> {
+public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<FavouritesRecyclerViewAdapter.MyViewHolder> {
 
     Context context;
-    List<HomeItem> data;
+    List<FavouritesItem> data;
 
-    public HomeRecyclerViewAdapter(Context context, List<HomeItem> data) {
+    public FavouritesRecyclerViewAdapter(Context context, List<FavouritesItem> data) {
         this.context = context;
         this.data = data;
     }
@@ -31,13 +33,13 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v;
-        v = LayoutInflater.from(context).inflate(R.layout.home_item, parent, false);
+        v = LayoutInflater.from(context).inflate(R.layout.favourites_item, parent, false);
         final MyViewHolder viewHolder = new MyViewHolder(v);
 
-        viewHolder.home_item.setOnClickListener(new View.OnClickListener() {
+        viewHolder.favourites_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked room" + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Clicked device" + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
             }
         });
         return viewHolder;
@@ -46,7 +48,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.textView1.setText(data.get(position).getRoom().getName());
+        holder.favouritesTitle.setText(data.get(position).getFavourite().getName());
         holder.img.setImageResource(data.get(position).getImg());
 
 
@@ -59,16 +61,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private LinearLayout home_item;
-        private TextView textView1;
+        private LinearLayout favourites_item;
+        private TextView favouritesTitle;
         private ImageView img;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            home_item = itemView.findViewById(R.id.home_item);
-            textView1 = itemView.findViewById(R.id.homeItem1);
-            img = itemView.findViewById(R.id.imageView);
-
+            favourites_item = itemView.findViewById(R.id.favourites_item);
+            favouritesTitle = itemView.findViewById(R.id.favouritesTitle);
+            img = itemView.findViewById(R.id.favourites_imageView);
         }
     }
 }

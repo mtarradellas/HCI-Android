@@ -1,18 +1,33 @@
 <resources>
+
+
+    <!-- General -->
     <string name="app_name">SmartHome</string>
-
-    <string name="routines_fragment">Routines</string>
-    <string name="home_fragment">Home</string>
-    <string name="favourites_fragment">Favourites</string>
-
     <string name="confirm_btn">Confirm</string>
     <string name="cancel_btn">Cancel</string>
     <string name="loading">loading...</string>
 
+    <!-- Home View -->
+    <string name="home_fragment">Home</string>
+    <string name="home_item_icon">home room icon</string>
+    <string name="home_no_connection">Could not load room list. Please check your internet connection and try again.</string>
+    <string name="home_list_empty">No rooms registered. To add new room click the options panel in the top right corner, then \'add room\'. To add a device you must first have a room for it.</string>
+
+    <!-- Routines View -->
+    <string name="routines_fragment">Routines</string>
+    <string name="routines_item_icon">routine item icon</string>
+    <string name="routines_no_connection">Could not load routines list. Please check your internet connection and try again.</string>
+    <string name="routines_list_empty">No routines registered. To add new routine click the options panel in the top right corner, then \'add routine\'.</string>
+
+    <!-- Favourites View -->
+    <string name="favourites_fragment">Favourites</string>
+    <string name="favourites_item_icon">favourite item icon</string>
+    <string name="favourites_no_connection">Could not load favourites list. Please check your internet connection and try again.</string>
+    <string name="favourites_list_empty">No favourite devices registered. To add new favourite first add a device to a room and then click the heart symbol in the device settings.</string>
+
+    <!-- Add Room View -->
     <string name="add_room_img_desc">New room icon</string>
     <string name="add_room_text_view">ADD ROOM</string>
     <string name="add_room_hint">Enter name</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
