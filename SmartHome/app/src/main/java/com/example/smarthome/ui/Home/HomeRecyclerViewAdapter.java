@@ -8,16 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smarthome.R;
 import com.example.smarthome.Room;
-import com.example.smarthome.RoomViewActivity;
-
-import org.w3c.dom.Text;
+import com.example.smarthome.ui.RoomView.RoomViewActivity;
 
 import java.util.List;
 

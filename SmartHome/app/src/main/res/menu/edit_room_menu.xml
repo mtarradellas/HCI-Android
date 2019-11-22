@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/rename_room"
+        android:title="@string/rename_opt"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/adddevice_room"
+        android:title="@string/adddevice_opt"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/rmdevice_room"
+        android:title="@string/rmdevice_opt"
+        app:showAsAction="never"/>
+</menu>

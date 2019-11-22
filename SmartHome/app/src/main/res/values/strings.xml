@@ -7,6 +7,17 @@
     <string name="cancel_btn">Cancel</string>
     <string name="loading">loading...</string>
 
+    <!-- Main Toolbar -->
+    <string name="settings_opt">Settings</string>
+    <string name="addroom_opt">Add Room</string>
+    <string name="addroutine_opt">Add Routine</string>
+    <string name="about_opt">About Us</string>
+
+    <!-- Edit Room Toolbar -->
+    <string name="rename_opt">Rename Room</string>
+    <string name="adddevice_opt">Add Device</string>
+    <string name="rmdevice_opt">Remove Device</string>
+
     <!-- Home View -->
     <string name="home_fragment">Home</string>
     <string name="home_item_icon">home room icon</string>
@@ -24,7 +35,7 @@
     <string name="favourites_fragment">Favourites</string>
     <string name="favourites_no_connection">Could not load favourites list. Please check your internet connection and try again.</string>
     <string name="favourites_list_empty">No favourite devices registered. To add new favourite first add a device to a room and then click the heart symbol in the device settings.</string>
-    <string name="favourites_item_icon">favourite item icon</string>
+    <string name="favourites_item_icon">favourite device icon</string>
     <string name="favourites_item_heart">favourite heart icon</string>
 
     <!-- Add Room View -->
@@ -33,6 +44,10 @@
     <string name="add_room_hint">Enter name</string>
 
     <!-- Room View -->
-    <string name="room_view_text_view">ROOM VIEW</string>
+    <string name="room_view_title">Edit Room</string>
+    <string name="room_devices_list_empty">No devices registered. To add a new device click the options panel in the top right corner, then \'add device\'.</string>
+    <string name="room_no_connection">Could not load devices list. Please check your internet connection and try again.</string>
+    <string name="room_item_icon">device icon</string>
+    <string name="room_item_heart">device heart icon</string>
 
 </resources>
