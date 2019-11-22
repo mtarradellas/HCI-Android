@@ -7,6 +7,7 @@
 
     <string name="confirm_btn">Confirm</string>
     <string name="cancel_btn">Cancel</string>
+    <string name="loading">loading...</string>
 
     <string name="add_room_img_desc">New room icon</string>
     <string name="add_room_text_view">ADD ROOM</string>

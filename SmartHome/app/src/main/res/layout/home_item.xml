@@ -12,26 +12,25 @@
         android:id="@+id/imageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:contentDescription="room icon"
         android:src="@drawable/lenia_sga" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/homeItem1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Room Name"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/homeItem2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Room Meta" />
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity
             case R.id.add_room:
                 addRoomDialog = new AddRoomDialog();
                 addRoomDialog.show(getSupportFragmentManager(), "example dialog");
-                Toast.makeText(this, "ROOM", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.add_routine:
                 Toast.makeText(this, "ROUTINE", Toast.LENGTH_SHORT).show();
@@ -117,7 +116,7 @@ public class MainActivity extends AppCompatActivity
         Api.getInstance(this.getApplicationContext()).addRoom(room, new Response.Listener<Room>() {
             @Override
             public void onResponse(Room response) {
-
+                homeFragment.onRefresh();
             }
         }, new Response.ErrorListener() {
             @Override
