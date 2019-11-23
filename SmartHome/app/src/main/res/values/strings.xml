@@ -53,4 +53,7 @@
     <!-- Device View -->
     <string name="device_no_connection">Could not retrieve device data. Please check your internet connection and try again.</string>
 
+    <!-- About Us View -->
+    <string name="about_us_title">About Us</string>
+
 </resources>

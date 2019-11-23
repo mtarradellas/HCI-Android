@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void about_onClick() {
-        Intent about = new Intent(this, AboutUsActivity.class);
+        Intent about = new Intent(this.getApplicationContext(), AboutUsActivity.class);
         startActivity(about);
     }
 }

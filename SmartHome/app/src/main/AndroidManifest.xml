@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.DevicesViews.LampActivity"></activity>
+        <activity android:name=".AboutUsActivity"></activity>
         <activity android:name=".ui.RoomView.RoomViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
