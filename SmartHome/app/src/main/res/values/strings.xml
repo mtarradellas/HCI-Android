@@ -6,6 +6,17 @@
     <string name="confirm_btn">Confirm</string>
     <string name="cancel_btn">Cancel</string>
     <string name="loading">loading...</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+
+    <!-- Colors -->
+    <string name="color_white">White</string>
+    <string name="color_red">Red</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_green">Green</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_purple">Purple</string>
 
     <!-- Main Toolbar -->
     <string name="settings_opt">Settings</string>
@@ -52,6 +63,11 @@
 
     <!-- Device View -->
     <string name="device_no_connection">Could not retrieve device data. Please check your internet connection and try again.</string>
+
+    <!-- Lamp View -->
+    <string name="lamp_dimmer">Dimmer</string>
+    <string name="lamp_color">Color</string>
+    <string name="lamp_room_title">Room</string>
 
     <!-- About Us View -->
     <string name="about_us_title">About Us</string>
