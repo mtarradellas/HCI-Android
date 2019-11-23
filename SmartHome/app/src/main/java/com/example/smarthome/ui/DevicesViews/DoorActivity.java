@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 
 import com.example.smarthome.Device;
+import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 
@@ -23,7 +24,7 @@ public class DoorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_door);
 
         Intent intent = getIntent();
-        door = intent.getParcelableExtra(FavouritesRecyclerViewAdapter.EXTRA_DEVICE);
+        door = intent.getParcelableExtra(MainActivity.EXTRA_DEVICE);
 
         doorBackTextView = findViewById(R.id.doorBackTextView);
         doorBackTextView.setText("");

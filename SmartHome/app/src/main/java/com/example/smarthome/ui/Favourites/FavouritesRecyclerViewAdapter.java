@@ -1,5 +1,6 @@
 package com.example.smarthome.ui.Favourites;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
@@ -15,6 +16,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smarthome.Device;
+import com.example.smarthome.MainActivity;
+import com.example.smarthome.Type;
+import com.example.smarthome.TypeId;
 import com.example.smarthome.ui.DevicesViews.DoorActivity;
 import com.example.smarthome.ui.DevicesViews.LampActivity;
 import com.example.smarthome.R;
@@ -23,7 +27,6 @@ import java.util.List;
 
 public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<FavouritesRecyclerViewAdapter.MyViewHolder> {
 
-    public static final String EXTRA_DEVICE = "com.example.smarthome.ui.Favourites.EXTRA_DEVICE";
     Context context;
     List<FavouritesItem> data;
 
@@ -53,12 +56,25 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
         Device device = data.get(idx).getFavourite();
         // TODO switch device type
         Intent intent;
-        if (device.getName().contains("door")) {
-            intent = new Intent(context, DoorActivity.class);
-        } else {
+        if (device.getTypeId().toString().equals(TypeId.LAMP.getTypeId())) {
             intent = new Intent(context, LampActivity.class);
+        } else if (device.getTypeId().toString().equals(TypeId.DOOR.getTypeId())) {
+            intent = new Intent(context, DoorActivity.class);
+        }/* else if (device.getTypeId().toString().equals(TypeId.ALARM.getTypeId())) {
+            intent = new Intent(context, AlarmActivity.class);
+        } else if (device.getTypeId().toString().equals(TypeId.AC.getTypeId())) {
+            intent = new Intent(context, AcActivity.class);
+        } else if (device.getTypeId().toString().equals(TypeId.BLIND.getTypeId())) {
+            intent = new Intent(context, BlidActivity.class);
+        } else if (device.getTypeId().toString().equals(TypeId.SPEAKER.getTypeId())) {
+            intent = new Intent(context, SpeakerActivity.class);
+        } else if (device.getTypeId().toString().equals(TypeId.VACUUM.getTypeId())) {
+            intent = new Intent(context, VacuumActivity.class);
+        }*/ else {
+            // TODO error
+            return;
         }
-        intent.putExtra(EXTRA_DEVICE, (Parcelable) device);
+        intent.putExtra(MainActivity.EXTRA_DEVICE, (Parcelable) device);
         context.startActivity(intent);
     }
 
