@@ -39,7 +39,7 @@ public class RoutinesRecyclerViewAdapter extends RecyclerView.Adapter<RoutinesRe
         viewHolder.routines_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked routine" + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Routine " + data.get(viewHolder.getAdapterPosition()).getRoutine().getName() + " executed", Toast.LENGTH_SHORT).show();
             }
         });
         return viewHolder;

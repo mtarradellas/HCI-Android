@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.smarthome.Device;
+import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 
@@ -22,7 +23,7 @@ public class BlindActivity extends AppCompatActivity {
         setContentView(R.layout.activity_blind);
 
         Intent intent = getIntent();
-        blind = intent.getParcelableExtra(FavouritesRecyclerViewAdapter.EXTRA_DEVICE);
+        blind = intent.getParcelableExtra(MainActivity.EXTRA_DEVICE);
 
         blindBackTextView = findViewById(R.id.blindBacktextView);
         blindBackTextView.setText("");
