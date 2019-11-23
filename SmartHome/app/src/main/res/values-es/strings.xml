@@ -5,6 +5,17 @@
     <string name="confirm_btn">Confirmar</string>
     <string name="cancel_btn">Cancelar</string>
     <string name="loading">cargando...</string>
+    <string name="on">Encendido</string>
+    <string name="off">Apagado</string>
+
+    <!-- Colors -->
+    <string name="color_white">Blanco</string>
+    <string name="color_red">Rojo</string>
+    <string name="color_pink">Rose</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_green">Verde</string>
+    <string name="color_yellow">Amarillo</string>
+    <string name="color_purple">Purpura</string>
 
     <!-- Main Toolbar -->
     <string name="settings_opt">Opciones</string>
@@ -51,6 +62,11 @@
 
     <!-- Device View -->
     <string name="device_no_connection">No se pudo cargar la informacion del dispositivo. Por favor chequee su conexion e intente nuevamente.</string>
+
+    <!-- Lamp View -->
+    <string name="lamp_dimmer">Intensidad</string>
+    <string name="lamp_color">Color</string>
+    <string name="lamp_room_title">Habitacion</string>
 
     <!-- About Us View -->
     <string name="about_us_title">Acerca De</string>

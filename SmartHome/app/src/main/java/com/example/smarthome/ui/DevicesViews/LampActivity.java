@@ -30,8 +30,7 @@ public class LampActivity extends AppCompatActivity {
         lamp = intent.getParcelableExtra(FavouritesRecyclerViewAdapter.EXTRA_DEVICE);
 
         lampBackTextView = findViewById(R.id.lampBackTextView);
-
-        lampBackTextView.setText(lamp.getName());
+        lampBackTextView.setText("");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
