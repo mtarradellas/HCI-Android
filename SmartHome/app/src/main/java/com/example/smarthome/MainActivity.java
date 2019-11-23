@@ -1,7 +1,18 @@
 package com.example.smarthome;
 
 import android.content.Intent;
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,6 +21,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.preference.PreferenceManager;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -19,6 +33,9 @@ import com.example.smarthome.ui.Favourites.FavouritesFragment;
 import com.example.smarthome.ui.Home.HomeFragment;
 import com.example.smarthome.ui.Routines.RoutinesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.LineNumberReader;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
@@ -34,6 +51,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -47,8 +65,36 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
+        Log.i("MyLog", "llamando al notification thingy");
+        createNotificationChannel();
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        if(savedInstanceState == null) {
+        Intent alarmIntent = new Intent(this, MyBroadCastReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+                SystemClock.elapsedRealtime(),
+                60 * 1000, pendingIntent);
+
+//        Intent intent = new Intent(this, NotificationBroadcastReceiver.class);
+//        startAlarm(alarmManager, pendingIntent);
+//        PendingIntent alarmIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+//        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+//        long interval;
+//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+//        String intervalPreference = sharedPreferences.getString("interval_preference", "1 min");
+//        if (alarmManager == null) {
+//            Log.i("ERROR: ", "Something went wrong...");
+//            return;
+//        }
+//        if (intervalPreference.equals("1 min")) {
+//            interval = 1;
+//        } else if (intervalPreference.equals("30 min")) {
+//            interval = AlarmManager.INTERVAL_HALF_HOUR;
+//        } else {
+//            interval = AlarmManager.INTERVAL_HOUR;
+//        }
+//        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + interval, interval, alarmIntent);
+        if (savedInstanceState == null) {
             bottomNavigationView.getMenu().getItem(1).setChecked(true);
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, homeFragment)
@@ -60,7 +106,9 @@ public class MainActivity extends AppCompatActivity
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+//                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.add_room:
                 addRoomDialog = new AddRoomDialog();
@@ -114,17 +162,31 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void applyAddRoom(String name) {
         Room room = new Room(name, null);
-        Api.getInstance(this.getApplicationContext()).addRoom(room, new Response.Listener<Room>() {
-            @Override
-            public void onResponse(Room response) {
-                homeFragment.onRefresh();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                homeFragment.setHomeBackText("No connection");
-            }
-        });
+        Api.getInstance(this.getApplicationContext()).addRoom(room, response -> homeFragment.onRefresh(), error -> homeFragment.setHomeBackText("No connection"));
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "The channel name"; // getString(R.string.channel_name);
+            String description = "The channel description"; // getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("smarthome_notification_channel", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+
+    }
+
+    private void startAlarm(AlarmManager alarmManager, PendingIntent pendingIntent) {
+
+        alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, 0, pendingIntent);
+
+
     }
 
     public void about_onClick() {

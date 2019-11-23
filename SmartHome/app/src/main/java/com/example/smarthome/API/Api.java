@@ -29,7 +29,7 @@ public class Api {
     private static RequestQueue requestQueue;
     // Use IP 10.0.2.2 instead of 127.0.0.1 when running Android emulator in the
     // same computer that runs the API.
-    private final String URL = "http://10.0.2.2:8080/api/";
+    private final String URL = "http://192.168.86.196:8080/api/";
 
     private Api(Context context) {
         this.requestQueue = VolleySingleton.getInstance(context).getRequestQueue();
@@ -42,6 +42,9 @@ public class Api {
         return instance;
     }
 
+    public String getUrl() {
+        return this.URL;
+    }
     ///////////     ROOMS       ///////////////////////
 
     public String addRoom(Room room, Response.Listener<Room> listener, Response.ErrorListener errorListener) {

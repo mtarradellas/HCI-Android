@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    style="@style/MyCheckBox"
+    app:theme="@style/MyCheckBox"
+    android:theme="@style/MyCheckBox">
+
+
+    <ListPreference
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:defaultValue="@string/Short"
+        android:entries="@array/ArrayInterval"
+        android:entryValues="@array/ArrayInterval"
+        android:key="interval_preference"
+        android:title="@string/Interval" />
+    <PreferenceCategory android:title="@string/activate_dev_not">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="alarm_preference"
+            android:title="@string/Alarm" />
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="ac_preference"
+            android:title="@string/Ac" />
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="blinds_preference"
+            android:title="@string/Blinds" />
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="door_preference"
+            android:title="@string/Door" />
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="lamp_preference"
+            android:title="@string/Lamp" />
+        <CheckBoxPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="vacuum_preference"
+            android:title="@string/Vacuum" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="speaker_preference"
+            android:title="@string/Speaker" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -11,4 +11,26 @@
     <color name="routinesBg">#F5F5F5</color>
     <color name="homeBg">#F5F5F5</color>
     <color name="favouritesBg">#F5F5F5</color>
+
+    <color name="white">#ffffffff</color>
+    <color name ="black">#ff000000</color>
+    <color name ="red">#f0453d</color>
+    <color name ="pink">#e52564</color>
+    <color name ="purple">#9830ac</color>
+    <color name ="deep_purple">#663fb2</color>
+    <color name ="indigo">#4054b0</color>
+    <color name ="blue">#2c96ee</color>
+    <color name ="light_blue">#1ea8ef</color>
+    <color name ="cyan">#1fbad1</color>
+    <color name ="teal">#159385</color>
+    <color name ="green">#50ac54</color>
+    <color name ="light_green">#8ac052</color>
+    <color name ="lime">#cbd949</color>
+    <color name ="yellow">#fce84e</color>
+    <color name ="amber">#fbbe2f</color>
+    <color name ="orange">#fb9527</color>
+    <color name ="deep_orange">#fa5830</color>
+    <color name ="brown">#775549</color>
+    <color name ="grey">#9c9c9c</color>
+    <color name ="blue_grey">#617c88</color>
 </resources>
