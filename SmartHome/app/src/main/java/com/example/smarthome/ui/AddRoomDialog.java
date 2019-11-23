@@ -30,14 +30,14 @@ public class AddRoomDialog extends AppCompatDialogFragment {
         inputEditText = view.findViewById(R.id.add_room_input);
 
         builder.setView(view)
-                .setTitle("Add Room")
-                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                .setTitle(R.string.add_room_text_view)
+                .setNegativeButton(R.string.cancel_btn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 })
-                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.confirm_btn, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String name = inputEditText.getText().toString();

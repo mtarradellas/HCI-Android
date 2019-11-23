@@ -7,7 +7,8 @@ public class DeviceMeta implements Serializable {
     private Boolean favourite;
 
     public DeviceMeta(Boolean favourite) {
-        this.favourite = favourite;
+
+        this.favourite = (favourite == null) ? false : favourite;
     }
     public DeviceMeta() {
         this.favourite = false;

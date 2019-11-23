@@ -85,7 +85,7 @@ public class FavouritesFragment extends Fragment implements SwipeRefreshLayout.O
                         name = device.getName();
                         type = device.getTypeId();
                         meta = device.getMeta();
-                        if (meta.getFavourite()) {
+                        if (device.isFav()) {
                             favouritesItems.add(new FavouritesItem(new Device(name, type, meta), R.drawable.ic_lightbulb_outline_black_24dp));
                         }
                     }
