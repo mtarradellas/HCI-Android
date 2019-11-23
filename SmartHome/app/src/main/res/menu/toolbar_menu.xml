@@ -7,16 +7,6 @@
         app:showAsAction="never"/>
 
     <item
-        android:id="@+id/add_room"
-        android:title="@string/addroom_opt"
-        app:showAsAction="never"/>
-
-    <item
-        android:id="@+id/add_routine"
-        android:title="@string/addroutine_opt"
-        app:showAsAction="never"/>
-
-    <item
         android:id="@+id/about"
         android:title="@string/about_opt"
         app:showAsAction="never"/>

@@ -107,7 +107,7 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.edit_room_menu, menu);
+        inflater.inflate(R.menu.toolbar_menu, menu);
         return true;
     }
 
