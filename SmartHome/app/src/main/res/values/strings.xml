@@ -70,6 +70,12 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Room</string>
 
+    <!-- Door View  -->
+    <string name="open_door">Open Door</string>
+    <string name="close_door">Close Door</string>
+    <string name="lock_door">Lock Door</string>
+    <string name="unlock_door">Unlock Door</string>
+
     <!-- About Us View -->
     <string name="about_us_title">About Us</string>
     <string name="developer_names">Santiago Reyes, Lucia Karpovich, Felipe Oliver, Manuel Tarradellas</string>
