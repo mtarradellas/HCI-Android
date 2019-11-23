@@ -55,5 +55,6 @@
 
     <!-- About Us View -->
     <string name="about_us_title">About Us</string>
+    <string name="developer_names">Santiago Reyes, Lucia Karpovich, Felipe Oliver, Manuel Tarradellas</string>
 
 </resources>
