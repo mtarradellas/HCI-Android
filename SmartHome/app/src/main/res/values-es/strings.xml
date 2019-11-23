@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <string name="app_name">SmartHome</string>
+    <string name="confirm_btn">Confirmar</string>
+    <string name="cancel_btn">Cancelar</string>
+    <string name="loading">cargando...</string>
+
+    <!-- Main Toolbar -->
+    <string name="settings_opt">Opciones</string>
+    <string name="addroom_opt">Agregar Cuarto</string>
+    <string name="addroutine_opt">Agregar Rutina</string>
+    <string name="about_opt">Sobre Nosotros</string>
+
+    <!-- Edit Room Toolbar -->
+    <string name="rename_opt">Renombrar Cuarto</string>
+    <string name="adddevice_opt">Agregar Dispositivo</string>
+    <string name="rmdevice_opt">Eliminar Dispositivo</string>
+
+    <!-- Home View -->
+    <string name="home_fragment">Inicio</string>
+    <string name="home_item_icon">Icono de inicio</string>
+    <string name="home_no_connection">No se pudo cargar la lista de cuartos. Por favor chequee su conexion e intente nuevamente.</string>
+    <string name="home_list_empty">No hay cuartos registrados. Para agregar uno haga click en el panel de opciones en la esquina superior derecha. Para agregar un dispositivo primero debe tener un cuarto. </string>
+
+    <!-- Routines View -->
+    <string name="routines_fragment">Rutinas</string>
+    <string name="routines_no_connection">No se pudo cargar la lista de rutinas. Por favor chequee su conexion e intente nuevamente.</string>
+    <string name="routines_list_empty">No hay rutinas registradas. Para agregar una haga click en el panel de opciones en la esquina superior derecha.</string>
+    <string name="routines_item_icon">Icono de rutina</string>
+    <string name="routines_item_start">Ejecutar</string>
+
+    <!-- Favourites View -->
+    <string name="favourites_fragment">Favoritos</string>
+    <string name="favourites_no_connection">No se pudo cargar la lista de favoritos. Por favor chequee su conexion e intente nuevamente.</string>
+    <string name="favourites_list_empty">No hay dispositivos favoritos registrados. Para agregar un dispositivo a favoritos haga click en el simbolo de corazon en las configuraciones del dispositivo.</string>
+    <string name="favourites_item_icon">Icono de dispositivo favorito</string>
+    <string name="favourites_item_heart">Icono de favoritos</string>
+
+    <!-- Add Room View -->
+    <string name="add_room_img_desc">Icono de cuarto nuevo</string>
+    <string name="add_room_text_view">AGREGAR CUARTO</string>
+    <string name="add_room_hint">Ingrese un nombre</string>
+
+    <!-- Room View -->
+    <string name="room_view_title">Cuarto</string>
+    <string name="room_devices_list_empty">No hay dispositivos registrados. Para agregar uno haga click en el panel de opciones en la esquina superior derecha.</string>
+    <string name="room_no_connection">No se pudo cargar la lista de dispositivos. Por favor chequee su conexion e intente nuevamente.</string>
+    <string name="room_item_icon">Icono de dispositivo</string>
+    <string name="room_item_heart">Icono de corazon</string>
+</resources>
