@@ -60,7 +60,6 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         holder.textView1.setText(data.get(position).getRoom().getName());
         holder.img.setImageResource(data.get(position).getImg());
 
-
     }
 
     @Override

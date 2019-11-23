@@ -21,7 +21,7 @@ import java.util.List;
 
 public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<FavouritesRecyclerViewAdapter.MyViewHolder> {
 
-    public static final String EXTRA_DEVICE = "com.example.smarthome.ui.Favourites.EXTRA_DEVICe";
+    public static final String EXTRA_DEVICE = "com.example.smarthome.ui.Favourites.EXTRA_DEVICE";
     Context context;
     List<FavouritesItem> data;
 
@@ -50,6 +50,8 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
     private void openDeviceViewActivity(int idx) {
         Device device = data.get(idx).getFavourite();
         // TODO switch device type
+
+
         Intent intent = new Intent(context, LampActivity.class);
         intent.putExtra(EXTRA_DEVICE, (Parcelable) device);
         context.startActivity(intent);
