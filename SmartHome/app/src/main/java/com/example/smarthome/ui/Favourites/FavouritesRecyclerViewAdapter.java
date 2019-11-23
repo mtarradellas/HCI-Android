@@ -1,25 +1,27 @@
 package com.example.smarthome.ui.Favourites;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.smarthome.Device;
+import com.example.smarthome.ui.DevicesViews.LampActivity;
 import com.example.smarthome.R;
-import com.example.smarthome.ui.Home.HomeItem;
-import com.example.smarthome.ui.Home.HomeRecyclerViewAdapter;
 
 import java.util.List;
 
 public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<FavouritesRecyclerViewAdapter.MyViewHolder> {
 
+    public static final String EXTRA_DEVICE = "com.example.smarthome.ui.Favourites.EXTRA_DEVICe";
     Context context;
     List<FavouritesItem> data;
 
@@ -39,10 +41,18 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
         viewHolder.favourites_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked device" + String.valueOf(viewHolder.getAdapterPosition()), Toast.LENGTH_SHORT).show();
+                openDeviceViewActivity(viewHolder.getAdapterPosition());
             }
         });
         return viewHolder;
+    }
+
+    private void openDeviceViewActivity(int idx) {
+        Device device = data.get(idx).getFavourite();
+        // TODO switch device type
+        Intent intent = new Intent(context, LampActivity.class);
+        intent.putExtra(EXTRA_DEVICE, (Parcelable) device);
+        context.startActivity(intent);
     }
 
     @Override

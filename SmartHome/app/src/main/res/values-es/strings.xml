@@ -48,4 +48,7 @@
     <string name="room_no_connection">No se pudo cargar la lista de dispositivos. Por favor chequee su conexion e intente nuevamente.</string>
     <string name="room_item_icon">Icono de dispositivo</string>
     <string name="room_item_heart">Icono de corazon</string>
+
+    <!-- Device View -->
+    <string name="device_no_connection">No se pudo cargar la informacion del dispositivo. Por favor chequee su conexion e intente nuevamente.</string>
 </resources>

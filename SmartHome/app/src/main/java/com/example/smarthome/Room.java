@@ -21,12 +21,14 @@ public class Room implements Parcelable {
 
     public Room( String name) {
         this.name = name;
-        this.meta = new Meta(null);
+        String string = null;
+        this.meta = new Meta(string);
     }
 
     protected Room(Parcel in) {
         id = in.readString();
         name = in.readString();
+        meta = in.readParcelable(Meta.class.getClassLoader());
     }
 
     public static final Creator<Room> CREATOR = new Creator<Room>() {
@@ -92,5 +94,6 @@ public class Room implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(id);
         dest.writeString(name);
+        dest.writeParcelable(meta, flags);
     }
 }

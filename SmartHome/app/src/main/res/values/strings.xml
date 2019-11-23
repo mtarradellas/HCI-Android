@@ -50,4 +50,7 @@
     <string name="room_item_icon">device icon</string>
     <string name="room_item_heart">device heart icon</string>
 
+    <!-- Device View -->
+    <string name="device_no_connection">Could not retrieve device data. Please check your internet connection and try again.</string>
+
 </resources>

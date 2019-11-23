@@ -2,11 +2,14 @@ package com.example.smarthome;
 
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Routine implements Serializable{
+public class Routine implements Serializable, Parcelable {
     private String id;
     private String name;
     private ArrayList<Action> actions;
@@ -23,6 +26,25 @@ public class Routine implements Serializable{
         this.actions = actions;
         this.name = name;
     }
+
+    protected Routine(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        actions = in.createTypedArrayList(Action.CREATOR);
+        meta = in.readParcelable(Meta.class.getClassLoader());
+    }
+
+    public static final Creator<Routine> CREATOR = new Creator<Routine>() {
+        @Override
+        public Routine createFromParcel(Parcel in) {
+            return new Routine(in);
+        }
+
+        @Override
+        public Routine[] newArray(int size) {
+            return new Routine[size];
+        }
+    };
 
     public boolean containsDevice(Device device){
         for(Action action: actions){
@@ -63,4 +85,16 @@ public class Routine implements Serializable{
     public Meta getMeta(){return meta;}
     public String getId(){return id;}
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeTypedList(actions);
+        dest.writeParcelable(meta, flags);
+    }
 }

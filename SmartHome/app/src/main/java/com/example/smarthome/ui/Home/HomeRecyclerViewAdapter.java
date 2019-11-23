@@ -40,13 +40,13 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         viewHolder.home_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRoomViewActivity(v, viewHolder.getAdapterPosition());
+                openRoomViewActivity(viewHolder.getAdapterPosition());
             }
         });
         return viewHolder;
     }
 
-    private void openRoomViewActivity(View v, int idx) {
+    private void openRoomViewActivity(int idx) {
         Room room = data.get(idx).getRoom();
 
         Intent intent = new Intent(context, RoomViewActivity.class);
