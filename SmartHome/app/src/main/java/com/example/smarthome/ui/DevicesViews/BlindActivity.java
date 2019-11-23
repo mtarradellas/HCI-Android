@@ -6,16 +6,19 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.smarthome.Device;
 import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
-import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class BlindActivity extends AppCompatActivity {
 
     private Device blind;
     private TextView blindBackTextView;
+    private ToggleButton toogle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,17 @@ public class BlindActivity extends AppCompatActivity {
         blindBackTextView = findViewById(R.id.blindBacktextView);
         blindBackTextView.setText("");
 
+        toogle = findViewById(R.id.blindToggle);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(blind.getName());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.toolbar_menu, menu);
+        return true;
     }
 }
