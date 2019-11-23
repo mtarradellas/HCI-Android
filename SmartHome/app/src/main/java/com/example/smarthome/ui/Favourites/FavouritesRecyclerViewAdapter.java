@@ -51,8 +51,12 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
     private void openDeviceViewActivity(int idx) {
         Device device = data.get(idx).getFavourite();
         // TODO switch device type
-
-        Intent intent = new Intent(context, LampActivity.class);
+        Intent intent;
+        if (device.getName().contains("door")) {
+            intent = new Intent(context, DoorActivity.class);
+        } else {
+            intent = new Intent(context, LampActivity.class);
+        }
         intent.putExtra(EXTRA_DEVICE, (Parcelable) device);
         context.startActivity(intent);
     }
