@@ -51,4 +51,8 @@
 
     <!-- Device View -->
     <string name="device_no_connection">No se pudo cargar la informacion del dispositivo. Por favor chequee su conexion e intente nuevamente.</string>
+
+    <!-- About Us View -->
+    <string name="about_us_title">Acerca De</string>
+
 </resources>
