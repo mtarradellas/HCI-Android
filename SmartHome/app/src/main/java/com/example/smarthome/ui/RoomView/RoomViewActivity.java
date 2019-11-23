@@ -8,6 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.TextView;
@@ -30,8 +31,10 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
 
     private RecyclerView recyclerView;
     private SwipeRefreshLayout swipeRefreshLayout;
+
     private ArrayList<RoomItem> roomItems;
     private TextView roomBackTextView;
+
     private Room room;
 
     @Override
@@ -46,27 +49,24 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
 
         roomBackTextView.setText(room.getName());
 
-        //roomItems.add(new RoomItem(new Device("lampara", null, null), findViewById(R.drawable.ic_lightbulb_outline_black_24dp)));
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(room.getName());
-/*
-        recyclerView = findViewById(R.id.roomRecyclerView);
-        RoomRecyclerViewAdapter recyclerViewAdapter = new RoomRecyclerViewAdapter(getApplicationContext(), roomItems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(recyclerViewAdapter);
 
+        recyclerView = findViewById(R.id.roomRecyclerView);
+        RoomRecyclerViewAdapter recyclerViewAdapter = new RoomRecyclerViewAdapter(this.getApplicationContext(), roomItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(recyclerViewAdapter);
 
         swipeRefreshLayout = findViewById(R.id.roomSwipeRefresh);
         swipeRefreshLayout.setOnRefreshListener(this);
 
-        //refreshRoom();
-*/
+        refreshRoom();
+
     }
 
     private void refreshRoom() {
-        Api.getInstance(this.getApplicationContext()).getDevices(new Response.Listener<ArrayList<Device>>() {
+        Api.getInstance(this.getApplicationContext()).getRoomDevices(room.getId(), new Response.Listener<ArrayList<Device>>() {
             @Override
             public void onResponse(ArrayList<Device> response) {
                 if (response.size() == 0) {
@@ -76,20 +76,22 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
                     String name;
                     Type type;
                     DeviceMeta meta;
+                    String id;
                     for (Device device : response) {
                         name = device.getName();
                         type = device.getTypeId();
                         meta = device.getMeta();
-                        //if (device.belongsIn(room)) {
-                            roomItems.add(new RoomItem(new Device(name, type, meta), R.drawable.ic_lightbulb_outline_black_24dp));
-                        //}
-                    }
+                        id = device.getId();
+                        Log.i(name, "AAAAAAAAAAAAAAAAA");
+                        roomItems.add(new RoomItem(new Device(id, name, type, meta)));
+                        }
                     if (roomItems.size() == 0) {
                         roomBackTextView.setText(R.string.room_devices_list_empty);
                     } else {
                         roomBackTextView.setText("");
                     }
                 }
+                Log.i(String.valueOf(roomItems.size()), "AAAAAAAAAAAAAAAAAAAAAAA");
                 RoomRecyclerViewAdapter recyclerViewAdapter = new RoomRecyclerViewAdapter(getApplicationContext(), roomItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 recyclerView.setAdapter(recyclerViewAdapter);
@@ -101,6 +103,7 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
                 roomBackTextView.setText(R.string.room_no_connection);
             }
         });
+
     }
 
     @Override

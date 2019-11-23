@@ -16,6 +16,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.smarthome.API.Api;
+import com.example.smarthome.Meta;
 import com.example.smarthome.R;
 import com.example.smarthome.Room;
 
@@ -74,9 +75,13 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 } else {
                     homeItems.clear();
                     String name;
+                    Meta meta;
+                    String id;
                     for (Room room : response) {
                         name = room.getName();
-                        homeItems.add(new HomeItem(new Room(name), R.drawable.ic_local_hotel_black_24dp));
+                        meta = room.getMeta();
+                        id = room.getId();
+                        homeItems.add(new HomeItem(new Room(id, name, meta), R.drawable.ic_local_hotel_black_24dp));
                     }
                     homeBackTextView.setText("");
                 }
