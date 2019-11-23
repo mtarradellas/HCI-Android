@@ -12,8 +12,9 @@
         android:roundIcon="@drawable/lenia_sga"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DevicesViews.LampActivity"></activity>
-        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".ui.DevicesViews.DoorActivity"></activity>
+        <activity android:name=".ui.DevicesViews.LampActivity" />
+        <activity android:name=".AboutUsActivity" />
         <activity android:name=".ui.RoomView.RoomViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

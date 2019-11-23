@@ -68,6 +68,12 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Habitacion</string>
 
+    <!-- Door View  -->
+    <string name="open_door">Abrir Puerta</string>
+    <string name="close_door">Cerrar Puerta</string>
+    <string name="lock_door">Trabar Puerta</string>
+    <string name="unlock_door">Destrabar Puerta</string>
+
     <!-- About Us View -->
     <string name="about_us_title">Acerca De</string>
     <string name="developer_names">Maria Eurelia Gonzalez Hernandez, Santiago Reyes, Felipe Oliver, Manuel Tarradellas</string>
