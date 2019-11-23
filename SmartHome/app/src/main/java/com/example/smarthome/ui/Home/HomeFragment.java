@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                         name = room.getName();
                         meta = room.getMeta();
                         id = room.getId();
-                        homeItems.add(new HomeItem(new Room(id, name, meta), R.drawable.ic_local_hotel_black_24dp));
+                        homeItems.add(new HomeItem(new Room(id, name, meta), R.drawable.room));
                     }
                     homeBackTextView.setText("");
                 }

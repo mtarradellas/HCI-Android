@@ -1,5 +1,6 @@
 package com.example.smarthome.ui.RoomView;
 
+import com.example.smarthome.API.DeviceType;
 import com.example.smarthome.Device;
 import com.example.smarthome.R;
 
@@ -14,7 +15,7 @@ public class RoomItem {
 
     public RoomItem(Device device) {
         this.device = device;
-        this.img = R.drawable.ic_lightbulb_outline_black_24dp;
+        this.img = DeviceType.getImg(device.getTypeId().toString());
     }
 
     public Device getDevice() {

@@ -16,6 +16,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.smarthome.API.Api;
+import com.example.smarthome.API.DeviceType;
 import com.example.smarthome.Device;
 import com.example.smarthome.DeviceMeta;
 import com.example.smarthome.R;
@@ -88,7 +89,7 @@ public class FavouritesFragment extends Fragment implements SwipeRefreshLayout.O
                         type = device.getTypeId();
                         meta = device.getMeta();
                         if (device.isFav()) {
-                            favouritesItems.add(new FavouritesItem(new Device(id, name, type, meta), R.drawable.ic_lightbulb_outline_black_24dp));
+                            favouritesItems.add(new FavouritesItem(new Device(id, name, type, meta), DeviceType.getImg(device.getTypeId().toString())));
                         }
                     }
                     if (favouritesItems.size() == 0) {
