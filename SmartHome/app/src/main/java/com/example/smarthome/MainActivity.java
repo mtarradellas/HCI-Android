@@ -29,6 +29,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.smarthome.API.Api;
 import com.example.smarthome.ui.AddRoomDialog;
+import com.example.smarthome.ui.DevicesViews.BlindActivity;
 import com.example.smarthome.ui.Favourites.FavouritesFragment;
 import com.example.smarthome.ui.Home.HomeFragment;
 import com.example.smarthome.ui.Routines.RoutinesFragment;

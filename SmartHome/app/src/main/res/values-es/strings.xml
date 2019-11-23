@@ -68,6 +68,10 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Habitacion</string>
 
+    <!-- Blind View  -->
+    <string name="open_blind">Abrir Persiana</string>
+    <string name="close_blind">Cerrar Persiana</string>
+
     <!-- Door View  -->
     <string name="open_door">Abrir Puerta</string>
     <string name="close_door">Cerrar Puerta</string>

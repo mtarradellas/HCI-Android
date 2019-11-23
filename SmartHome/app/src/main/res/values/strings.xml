@@ -70,6 +70,10 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Room</string>
 
+    <!-- Blind View  -->
+    <string name="open_blind">Open Blind</string>
+    <string name="close_blind">Close Blind</string>
+
     <!-- Door View  -->
     <string name="open_door">Open Door</string>
     <string name="close_door">Close Door</string>
@@ -81,7 +85,7 @@
     <string name="developer_names">Santiago Reyes, Lucia Karpovich, Felipe Oliver, Manuel Tarradellas</string>
 
 
-<!--    Preferences -->
+    <!--    Preferences -->
     <string name="pref_dark_theme">Dark theme (Unfinished, needs restart)</string>
     <string-array name="ArrayInterval">
         <item>@string/Short</item>
@@ -97,82 +101,82 @@
 
 
     <string name="Blinds">Blinds</string>
-<string name="UpDown">Up/Down</string>
-<string name="Up">Up</string>
-<string name="Down">Down</string>
-<string name="SuccessBlindsDown">Success! Blind is now Down.</string>
-<string name="SuccessBlindsUp">Success! Blind is now Up.</string>
+    <string name="UpDown">Up/Down</string>
+    <string name="Up">Up</string>
+    <string name="Down">Down</string>
+    <string name="SuccessBlindsDown">Success! Blind is now Down.</string>
+    <string name="SuccessBlindsUp">Success! Blind is now Up.</string>
 
-<string name="Ac">Air Conditioner</string>
-<string name="OnOff" translatable="false">On/Off</string>
-<string name="On" translatable="false">On</string>
-<string name="Off" translatable="false">Off</string>
-<string name="Temperature">Temperature</string>
-<string name="VerticalSwing">Vertical swing</string>
-<string name="HorizontalSwing">Horizontal swing</string>
-<string name="FanSpeed">Fan speed</string>
-<string name="AcMode">Mode</string>
-<string name="Cool">Cool</string>
-<string name="Heat">Heat</string>
-<string name="Fan">Fan</string>
-<string name="VSwingSuccess">Success! Vertical Swing has changed.</string>
-<string name="HSwingSuccess">Success! Horizontal Swing has changed.</string>
-<string name="FanSpeedSuccess">Success! Fan Speed has changed.</string>
-<string name="AcModeSuccess">Success! Ac Mode has changed.</string>
+    <string name="Ac">Air Conditioner</string>
+    <string name="OnOff" translatable="false">On/Off</string>
+    <string name="On" translatable="false">On</string>
+    <string name="Off" translatable="false">Off</string>
+    <string name="Temperature">Temperature</string>
+    <string name="VerticalSwing">Vertical swing</string>
+    <string name="HorizontalSwing">Horizontal swing</string>
+    <string name="FanSpeed">Fan speed</string>
+    <string name="AcMode">Mode</string>
+    <string name="Cool">Cool</string>
+    <string name="Heat">Heat</string>
+    <string name="Fan">Fan</string>
+    <string name="VSwingSuccess">Success! Vertical Swing has changed.</string>
+    <string name="HSwingSuccess">Success! Horizontal Swing has changed.</string>
+    <string name="FanSpeedSuccess">Success! Fan Speed has changed.</string>
+    <string name="AcModeSuccess">Success! Ac Mode has changed.</string>
 
-<string name="SuccessMsgOnOff">Success! Device is now </string>
-<string name="OnM">On</string>
-<string name="OffM">Off</string>
-<string name="SuccessMsgTemp">Success! Temperature has changed.</string>
+    <string name="SuccessMsgOnOff">Success! Device is now </string>
+    <string name="OnM">On</string>
+    <string name="OffM">Off</string>
+    <string name="SuccessMsgTemp">Success! Temperature has changed.</string>
 
-<string name="Door">Door</string>
-<string name="OpenClose">Open the door</string>
-<string name="Open">Open</string>
-<string name="Close">Close</string>
-<string name="Lock">Lock</string>
-<string name="Unlock">Unlock</string>
-<string name="LockUnlock">Lock the Door</string>
-<string name="SuccessMsgDoor">Success! The door is now </string>
-<string name="OpenMsg">Open.</string>
-<string name="CloseMsg">Closed.</string>
-<string name="LockMsg">Locked.</string>
-<string name="UnlockMsg">Unlocked.</string>
-
-
-<string name="Lamp">Lamp</string>
-<string name="Brightness">Brightness</string>
-<string name="ColorPicker">Color Picker</string>
-<string name="SuccessMsgBright">Success! Brightness has successfully changed.</string>
-<string name="SuccessMsgCol">Success! The lamp color has successfully changed.</string>
-
-<!--<string name="Oven">Oven</string>-->
-<!--<string name="Eco" translatable="false">Eco</string>-->
-<!--<string name="Normal">Normal</string>-->
-<!--<string name="Large">Large</string>-->
-<!--<string name="ConvectionMode">Convection mode</string>-->
-<!--<string name="Bottom">Bottom</string>-->
-<!--<string name="Top">Top</string>-->
-<!--<string name="Conventional">Conventional</string>-->
-<!--<string name="HeatMode">Heat mode</string>-->
-<!--<string name="GrillMode">Grill Mode</string>-->
-
-<!--<string name="SuccessCMode">Success! Convection mode has successfully changed.</string>-->
-<!--<string name="SuccessGMode">Success! Grill mode has successfully changed.</string>-->
-<!--<string name="SuccessHMode">Success! Heat mode has successfully changed.</string>-->
+    <string name="Door">Door</string>
+    <string name="OpenClose">Open the door</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="Lock">Lock</string>
+    <string name="Unlock">Unlock</string>
+    <string name="LockUnlock">Lock the Door</string>
+    <string name="SuccessMsgDoor">Success! The door is now </string>
+    <string name="OpenMsg">Open.</string>
+    <string name="CloseMsg">Closed.</string>
+    <string name="LockMsg">Locked.</string>
+    <string name="UnlockMsg">Unlocked.</string>
 
 
-<!--<string name="Refrigerator">Refrigerator</string>-->
-<!--<string name="FreezerTemperature">Freezer temperature</string>-->
-<!--<string name="Party">Party</string>-->
-<!--<string name="Vacations">Vacations</string>-->
-<!--<string name="SuccessFMode">Success! Fridge mode has successfully changed.</string>-->
-<!--<string name="Default">Default</string>-->
+    <string name="Lamp">Lamp</string>
+    <string name="Brightness">Brightness</string>
+    <string name="ColorPicker">Color Picker</string>
+    <string name="SuccessMsgBright">Success! Brightness has successfully changed.</string>
+    <string name="SuccessMsgCol">Success! The lamp color has successfully changed.</string>
 
-<string name="Vacuum">Vacuum</string>
+    <!--<string name="Oven">Oven</string>-->
+    <!--<string name="Eco" translatable="false">Eco</string>-->
+    <!--<string name="Normal">Normal</string>-->
+    <!--<string name="Large">Large</string>-->
+    <!--<string name="ConvectionMode">Convection mode</string>-->
+    <!--<string name="Bottom">Bottom</string>-->
+    <!--<string name="Top">Top</string>-->
+    <!--<string name="Conventional">Conventional</string>-->
+    <!--<string name="HeatMode">Heat mode</string>-->
+    <!--<string name="GrillMode">Grill Mode</string>-->
 
-<string name="Speaker">Speaker</string>
+    <!--<string name="SuccessCMode">Success! Convection mode has successfully changed.</string>-->
+    <!--<string name="SuccessGMode">Success! Grill mode has successfully changed.</string>-->
+    <!--<string name="SuccessHMode">Success! Heat mode has successfully changed.</string>-->
 
-<string name="Alarm">Alarm</string>
-<string name="ColumnsAmount">Columns amount</string>
-<string name="ChangeMessage">A device has been changed!</string>
+
+    <!--<string name="Refrigerator">Refrigerator</string>-->
+    <!--<string name="FreezerTemperature">Freezer temperature</string>-->
+    <!--<string name="Party">Party</string>-->
+    <!--<string name="Vacations">Vacations</string>-->
+    <!--<string name="SuccessFMode">Success! Fridge mode has successfully changed.</string>-->
+    <!--<string name="Default">Default</string>-->
+
+    <string name="Vacuum">Vacuum</string>
+
+    <string name="Speaker">Speaker</string>
+
+    <string name="Alarm">Alarm</string>
+    <string name="ColumnsAmount">Columns amount</string>
+    <string name="ChangeMessage">A device has been changed!</string>
 </resources>
