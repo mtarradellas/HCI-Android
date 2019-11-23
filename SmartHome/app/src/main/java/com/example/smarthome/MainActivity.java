@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity
         implements BottomNavigationView.OnNavigationItemSelectedListener,
         AddRoomDialog.AddRoomListener {
 
+    public static final String EXTRA_DEVICE = "com.example.smarthome.EXTRA_DEVICE";
+
     private HomeFragment homeFragment;
     private RoutinesFragment routinesFragment;
     private FavouritesFragment favouritesFragment;
