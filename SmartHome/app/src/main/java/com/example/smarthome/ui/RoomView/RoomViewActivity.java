@@ -82,7 +82,6 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
                         type = device.getTypeId();
                         meta = device.getMeta();
                         id = device.getId();
-                        Log.i(name, "AAAAAAAAAAAAAAAAA");
                         roomItems.add(new RoomItem(new Device(id, name, type, meta)));
                         }
                     if (roomItems.size() == 0) {
@@ -91,7 +90,6 @@ public class RoomViewActivity extends AppCompatActivity implements SwipeRefreshL
                         roomBackTextView.setText("");
                     }
                 }
-                Log.i(String.valueOf(roomItems.size()), "AAAAAAAAAAAAAAAAAAAAAAA");
                 RoomRecyclerViewAdapter recyclerViewAdapter = new RoomRecyclerViewAdapter(getApplicationContext(), roomItems);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 recyclerView.setAdapter(recyclerViewAdapter);

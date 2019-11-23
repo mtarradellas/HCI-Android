@@ -40,8 +40,6 @@ public class RoomRecyclerViewAdapter extends RecyclerView.Adapter<RoomRecyclerVi
         v = LayoutInflater.from(context).inflate(R.layout.room_item, parent, false);
         final MyViewHolder viewHolder = new MyViewHolder(v);
 
-        Log.d(String.valueOf(data.size()), "AAAAAAAAAAAAAAaa");
-
         viewHolder.room_item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
