@@ -110,13 +110,6 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
 //                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.add_room:
-                addRoomDialog = new AddRoomDialog();
-                addRoomDialog.show(getSupportFragmentManager(), "example dialog");
-                return true;
-            case R.id.add_routine:
-                Toast.makeText(this, "ROUTINE", Toast.LENGTH_SHORT).show();
-                return true;
             case R.id.about:
                 about_onClick();
                 Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();

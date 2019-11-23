@@ -3,6 +3,7 @@ package com.example.smarthome.ui.Favourites;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,6 @@ public class FavouritesRecyclerViewAdapter extends RecyclerView.Adapter<Favourit
     private void openDeviceViewActivity(int idx) {
         Device device = data.get(idx).getFavourite();
         // TODO switch device type
-
 
         Intent intent = new Intent(context, LampActivity.class);
         intent.putExtra(EXTRA_DEVICE, (Parcelable) device);
