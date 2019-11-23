@@ -3,34 +3,32 @@ package com.example.smarthome.ui.DevicesViews;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.Intent;
-
 import com.example.smarthome.Device;
-import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class DoorActivity extends AppCompatActivity {
+public class BlindActivity extends AppCompatActivity {
 
-    private Device door;
-    private TextView doorBackTextView;
+    private Device blind;
+    private TextView blindBackTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_door);
+        setContentView(R.layout.activity_blind);
 
         Intent intent = getIntent();
-        door = intent.getParcelableExtra(MainActivity.EXTRA_DEVICE);
+        blind = intent.getParcelableExtra(FavouritesRecyclerViewAdapter.EXTRA_DEVICE);
 
-        doorBackTextView = findViewById(R.id.doorBackTextView);
-        doorBackTextView.setText("");
+        blindBackTextView = findViewById(R.id.blindBacktextView);
+        blindBackTextView.setText("");
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(door.getName());
+        getSupportActionBar().setTitle(blind.getName());
     }
 }

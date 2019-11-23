@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DevicesViews.DoorActivity">
+    tools:context=".ui.DevicesViews.BlindActivity">
 
     <include
         android:id="@+id/toolbar"
@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/doorBackTextView"
+        android:id="@+id/blindBacktextView"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -40,7 +40,7 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="266dp"
-            app:srcCompat="@drawable/door" />
+            app:srcCompat="@drawable/blind" />
 
         <Space
             android:layout_width="match_parent"
@@ -51,21 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ToggleButton"
-            android:textOff="@string/open_door"
-            android:textOn="@string/close_door" />
+            android:textOff="@string/open_blind"
+            android:textOn="@string/close_blind" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <ToggleButton
-            android:id="@+id/toggleButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            android:textOff="@string/lock_door"
-            android:textOn="@string/unlock_door" />
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

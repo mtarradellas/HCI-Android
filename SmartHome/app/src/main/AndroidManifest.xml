@@ -14,7 +14,8 @@
         android:roundIcon="@drawable/lenia_sga"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DevicesViews.DoorActivity"></activity>
+        <activity android:name=".ui.DevicesViews.BlindActivity"></activity>
+        <activity android:name=".ui.DevicesViews.DoorActivity" />
         <activity android:name=".ui.DevicesViews.LampActivity" />
         <activity android:name=".AboutUsActivity" />
         <activity android:name=".ui.RoomView.RoomViewActivity" />
@@ -26,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver
             android:name=".MyBroadCastReceiver"
             android:directBootAware="true"
