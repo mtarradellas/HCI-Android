@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.example.smarthome.API.Api;
 import com.example.smarthome.Device;
 import com.example.smarthome.DeviceStates.StateLamp;
+import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 import com.example.smarthome.ui.Home.HomeRecyclerViewAdapter;
@@ -47,7 +48,7 @@ public class LampActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lamp);
 
         Intent intent = getIntent();
-        lamp = intent.getParcelableExtra(FavouritesRecyclerViewAdapter.EXTRA_DEVICE);
+        lamp = intent.getParcelableExtra(MainActivity.EXTRA_DEVICE);
 
         lampBackTextView = findViewById(R.id.lampBackTextView);
         lampBackTextView.setText(R.string.loading);
