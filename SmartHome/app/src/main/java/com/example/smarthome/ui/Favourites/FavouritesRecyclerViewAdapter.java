@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smarthome.Device;
+import com.example.smarthome.ui.DevicesViews.DoorActivity;
 import com.example.smarthome.ui.DevicesViews.LampActivity;
 import com.example.smarthome.R;
 
