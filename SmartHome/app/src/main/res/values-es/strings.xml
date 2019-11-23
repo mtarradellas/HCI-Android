@@ -54,5 +54,6 @@
 
     <!-- About Us View -->
     <string name="about_us_title">Acerca De</string>
+    <string name="developer_names">Maria Eurelia Gonzalez Hernandez, Santiago Reyes, Felipe Oliver, Manuel Tarradellas</string>
 
 </resources>
