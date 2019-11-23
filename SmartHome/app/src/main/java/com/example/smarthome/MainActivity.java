@@ -1,5 +1,6 @@
 package com.example.smarthome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, "ROUTINE", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.about:
+                about_onClick();
                 Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
                 return true;
             default:
@@ -121,5 +123,10 @@ public class MainActivity extends AppCompatActivity
                 homeFragment.setHomeBackText("No connection");
             }
         });
+    }
+
+    public void about_onClick() {
+        Intent about = new Intent(this, AboutUsActivity.class);
+        startActivity(about);
     }
 }
