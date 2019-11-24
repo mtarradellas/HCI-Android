@@ -70,6 +70,15 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Room</string>
 
+    <!-- Vacuum View  -->
+    <string name="pause_vacuum">Pause</string>
+    <string name="continue_vacuum">Continue</string>
+    <string name="return_vacuum">Return Base Charge</string>
+    <string name="leave_vacuum">Leave Base Charge</string>
+    <string name="act_vacuum">Vacuum</string>
+    <string name="act_mop">Mop</string>
+
+
     <!-- Blind View  -->
     <string name="open_blind">Open Blind</string>
     <string name="close_blind">Close Blind</string>

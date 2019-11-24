@@ -68,6 +68,14 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Habitacion</string>
 
+    <!-- Vacuum View  -->
+    <string name="pause_vacuum">Pausar</string>
+    <string name="continue_vacuum">Continuar</string>
+    <string name="return_vacuum">Volver a la Base de Carga</string>
+    <string name="leave_vacuum">Salir de la Base de Carga</string>
+    <string name="act_vacuum">Aspirar</string>
+    <string name="act_mop">Trapear</string>
+
     <!-- Blind View  -->
     <string name="open_blind">Abrir Persiana</string>
     <string name="close_blind">Cerrar Persiana</string>
