@@ -48,13 +48,6 @@
             android:layout_height="30dp" />
 
         <ToggleButton
-            android:id="@+id/stereoOnToggle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textOff="@string/on_stereo"
-            android:textOn="@string/off_stereo" />
-
-        <ToggleButton
             android:id="@+id/stereoPlayToggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
