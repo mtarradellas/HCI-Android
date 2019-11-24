@@ -82,9 +82,11 @@ public class RoutinesFragment extends Fragment implements SwipeRefreshLayout.OnR
                 } else {
                     routinesItems.clear();
                     String name;
+                    String id;
                     for (Routine routine : response) {
                         name = routine.getName();
-                        routinesItems.add(new RoutinesItem(new Routine(name, null, null), R.drawable.ic_alarm_black_24dp));
+                        id = routine.getId();
+                        routinesItems.add(new RoutinesItem(new Routine(id, name, null, null), R.drawable.ic_alarm_black_24dp));
                     }
                     routinesBackTextView.setText("");
                 }

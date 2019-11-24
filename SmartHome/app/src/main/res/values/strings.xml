@@ -24,11 +24,6 @@
     <string name="addroutine_opt">Add Routine</string>
     <string name="about_opt">About Us</string>
 
-    <!-- Edit Room Toolbar -->
-    <string name="rename_opt">Rename Room</string>
-    <string name="adddevice_opt">Add Device</string>
-    <string name="rmdevice_opt">Remove Device</string>
-
     <!-- Home View -->
     <string name="home_fragment">Home</string>
     <string name="home_item_icon">home room icon</string>
@@ -41,6 +36,9 @@
     <string name="routines_list_empty">No routines registered. To add new routine click the options panel in the top right corner, then \'add routine\'.</string>
     <string name="routines_item_icon">routine item icon</string>
     <string name="routines_item_start">Run</string>
+    <string name="routine">Routine</string>
+    <string name="executed">executed</string>
+    <string name="failed">failed</string>
 
     <!-- Favourites View -->
     <string name="favourites_fragment">Favourites</string>
@@ -49,10 +47,6 @@
     <string name="favourites_item_icon">favourite device icon</string>
     <string name="favourites_item_heart">favourite heart icon</string>
 
-    <!-- Add Room View -->
-    <string name="add_room_img_desc">New room icon</string>
-    <string name="add_room_text_view">ADD ROOM</string>
-    <string name="add_room_hint">Enter name</string>
 
     <!-- Room View -->
     <string name="room_view_title">Edit Room</string>
@@ -70,9 +64,20 @@
     <string name="lamp_color">Color</string>
     <string name="lamp_room_title">Room</string>
 
+    <!-- Vacuum View  -->
+    <string name="pause_vacuum">Pause</string>
+    <string name="continue_vacuum">Continue</string>
+    <string name="return_vacuum">Return Base Charge</string>
+    <string name="leave_vacuum">Leave Base Charge</string>
+    <string name="act_vacuum">Vacuum</string>
+    <string name="act_mop">Mop</string>
+    <string name="vaccum_icon">Vacuum icon</string>
+
+
     <!-- Blind View  -->
     <string name="open_blind">Open Blind</string>
     <string name="close_blind">Close Blind</string>
+    <string name="blinds_icon">Blinds icon</string>
 
     <!-- Stereo View  -->
     <string name="on_stereo">Turn On</string>
@@ -86,20 +91,13 @@
     <string name="close_door">Close Door</string>
     <string name="lock_door">Lock Door</string>
     <string name="unlock_door">Unlock Door</string>
+    <string name="door_icon">Door icon</string>
 
     <!-- About Us View -->
     <string name="about_us_title">About Us</string>
     <string name="developer_names">Santiago Reyes, Lucia Karpovich, Felipe Oliver, Manuel Tarradellas</string>
 
-
-    <!--    Preferences -->
-    <string name="pref_dark_theme">Dark theme (Unfinished, needs restart)</string>
-    <string-array name="ArrayInterval">
-        <item>@string/Short</item>
-        <item>@string/Medium</item>
-        <item>@string/Long</item>
-    </string-array>
-
+    <!-- Preferences -->
     <string name="Short">1 min</string>
     <string name="Medium">30 min</string>
     <string name="Long">60 min</string>
@@ -156,28 +154,6 @@
     <string name="SuccessMsgBright">Success! Brightness has successfully changed.</string>
     <string name="SuccessMsgCol">Success! The lamp color has successfully changed.</string>
 
-    <!--<string name="Oven">Oven</string>-->
-    <!--<string name="Eco" translatable="false">Eco</string>-->
-    <!--<string name="Normal">Normal</string>-->
-    <!--<string name="Large">Large</string>-->
-    <!--<string name="ConvectionMode">Convection mode</string>-->
-    <!--<string name="Bottom">Bottom</string>-->
-    <!--<string name="Top">Top</string>-->
-    <!--<string name="Conventional">Conventional</string>-->
-    <!--<string name="HeatMode">Heat mode</string>-->
-    <!--<string name="GrillMode">Grill Mode</string>-->
-
-    <!--<string name="SuccessCMode">Success! Convection mode has successfully changed.</string>-->
-    <!--<string name="SuccessGMode">Success! Grill mode has successfully changed.</string>-->
-    <!--<string name="SuccessHMode">Success! Heat mode has successfully changed.</string>-->
-
-
-    <!--<string name="Refrigerator">Refrigerator</string>-->
-    <!--<string name="FreezerTemperature">Freezer temperature</string>-->
-    <!--<string name="Party">Party</string>-->
-    <!--<string name="Vacations">Vacations</string>-->
-    <!--<string name="SuccessFMode">Success! Fridge mode has successfully changed.</string>-->
-    <!--<string name="Default">Default</string>-->
 
     <string name="Vacuum">Vacuum</string>
 
@@ -186,4 +162,8 @@
     <string name="Alarm">Alarm</string>
     <string name="ColumnsAmount">Columns amount</string>
     <string name="ChangeMessage">A device has been changed!</string>
+    <string name="ChangeMessage2">A device has been changed!</string>
+
+
+
 </resources>

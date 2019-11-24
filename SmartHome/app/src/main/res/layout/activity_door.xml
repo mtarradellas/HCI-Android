@@ -27,45 +27,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="266dp"
-            app:srcCompat="@drawable/door" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <ToggleButton
-            android:id="@+id/toggleButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            android:textOff="@string/open_door"
-            android:textOn="@string/close_door" />
+            android:orientation="vertical">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="266dp"
+                android:contentDescription="@string/door_icon"
+                app:srcCompat="@drawable/door" />
 
-        <ToggleButton
-            android:id="@+id/toggleButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            android:textOff="@string/lock_door"
-            android:textOn="@string/unlock_door" />
-    </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <ToggleButton
+                android:id="@+id/doorOpenToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="@string/open_door"
+                android:textOn="@string/close_door" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <ToggleButton
+                android:id="@+id/doorLockToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="@string/lock_door"
+                android:textOn="@string/unlock_door" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

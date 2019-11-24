@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.DevicesViews.BlindActivity">
+    tools:context=".ui.DevicesViews.VacuumActivity">
+
 
     <include
         android:id="@+id/toolbar"
@@ -14,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/blindBacktextView"
+        android:id="@+id/vacuumBackTextView"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -37,26 +38,43 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
 
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="266dp"
-                android:contentDescription="@string/blinds_icon"
-                app:srcCompat="@drawable/blind" />
+                android:contentDescription="@string/vaccum_icon"
+                app:srcCompat="@drawable/vacuum" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
 
             <ToggleButton
-                android:id="@+id/blindToggle"
+                android:id="@+id/vacuumOnToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ToggleButton
+                android:id="@+id/vacuumPlayToggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textOff="@string/open_blind"
-                android:textOn="@string/close_blind" />
+                android:checked="false"
+                android:textOff="@string/pause_vacuum"
+                android:textOn="@string/continue_vacuum" />
+
+            <ToggleButton
+                android:id="@+id/vacuumModeToggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOff="@string/act_mop"
+                android:textOn="@string/act_vacuum" />
 
         </LinearLayout>
     </ScrollView>

@@ -20,8 +20,10 @@ import com.example.smarthome.Device;
 import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
 import com.example.smarthome.TypeId;
+import com.example.smarthome.ui.DevicesViews.BlindActivity;
 import com.example.smarthome.ui.DevicesViews.DoorActivity;
 import com.example.smarthome.ui.DevicesViews.LampActivity;
+import com.example.smarthome.ui.DevicesViews.VacuumActivity;
 import com.example.smarthome.ui.Favourites.FavouritesItem;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 import com.example.smarthome.ui.Home.HomeItem;
@@ -64,21 +66,22 @@ public class RoomRecyclerViewAdapter extends RecyclerView.Adapter<RoomRecyclerVi
             intent = new Intent(context, LampActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.DOOR.getTypeId())) {
             intent = new Intent(context, DoorActivity.class);
-        }/* else if (device.getTypeId().toString().equals(TypeId.ALARM.getTypeId())) {
-            intent = new Intent(context, AlarmActivity.class);
-        } else if (device.getTypeId().toString().equals(TypeId.AC.getTypeId())) {
-            intent = new Intent(context, AcActivity.class);
+        //}else if (device.getTypeId().toString().equals(TypeId.ALARM.getTypeId())) {
+        //    intent = new Intent(context, AlarmActivity.class);
+        //} else if (device.getTypeId().toString().equals(TypeId.AC.getTypeId())) {
+        //    intent = new Intent(context, AcActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.BLIND.getTypeId())) {
-            intent = new Intent(context, BlidActivity.class);
-        } else if (device.getTypeId().toString().equals(TypeId.SPEAKER.getTypeId())) {
-            intent = new Intent(context, SpeakerActivity.class);
+            intent = new Intent(context, BlindActivity.class);
+        //} else if (device.getTypeId().toString().equals(TypeId.SPEAKER.getTypeId())) {
+        //    intent = new Intent(context, SpeakerActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.VACUUM.getTypeId())) {
             intent = new Intent(context, VacuumActivity.class);
-        }*/ else {
+        } else {
             // TODO error
             return;
         }
         intent.putExtra(MainActivity.EXTRA_DEVICE, (Parcelable) device);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
