@@ -28,11 +28,11 @@ public class StereoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         stereo = intent.getParcelableExtra(MainActivity.EXTRA_DEVICE);
 
-        stereoBackTextView = findViewById(R.id.doorBackTextView);
+        stereoBackTextView = findViewById(R.id.stereoBackTextView);
         stereoBackTextView.setText("");
 
         aSwitch = findViewById(R.id.lampSwitch);
-        seekBar = findViewById(R.id.lampDimmerSeekBar);
+        seekBar = findViewById(R.id.stereoDimmerSeekBar);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -79,6 +79,15 @@
     <string name="close_blind">Close Blind</string>
     <string name="blinds_icon">Blinds icon</string>
 
+    <!-- AC View  -->
+    <string name="ac_on">On</string>
+    <string name="ac_off">Off</string>
+    <string name="ac_warm">Change to Warm</string>
+    <string name="ac_cold">Change to Cold</string>
+    <string name="ac_temp">Temperature</string>
+    <string name="ac_speed">Speed</string>
+    <string name="ac_icon">AC icon</string>
+
     <!-- Stereo View  -->
     <string name="on_stereo">Turn On</string>
     <string name="off_stereo">Turn Off</string>
@@ -163,7 +172,6 @@
     <string name="ColumnsAmount">Columns amount</string>
     <string name="ChangeMessage">A device has been changed!</string>
     <string name="ChangeMessage2">A device has been changed!</string>
-
 
 
 </resources>
