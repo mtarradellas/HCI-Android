@@ -178,7 +178,9 @@
     <string name="setBlue">Se ha cambiado el color a azul</string>
     <string name="setPink">Se ha cambiado el color a rosa</string>
 
+    <string name="setVolume">Se ha cambiado el volumen: </string>
     <string name="setBright">Se ha cambiado el brillo a:  </string>
     <string name="noChangeBright">No cambio el brillo</string>
+    <string name="noChangeVolume">No se cambion el volumen</string>
 
 </resources>

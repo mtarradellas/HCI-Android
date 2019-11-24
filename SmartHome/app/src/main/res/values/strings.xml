@@ -188,6 +188,9 @@
     <string name="setPink">Set color to pink</string>
 
     <string name="setBright">Set brightness to: </string>
+    <string name="setVolume">Set volume to: </string>
     <string name="noChangeBright">Did not change brightness</string>
+
+    <string name="noChangeVolume">Did not change volume</string>
 
 </resources>

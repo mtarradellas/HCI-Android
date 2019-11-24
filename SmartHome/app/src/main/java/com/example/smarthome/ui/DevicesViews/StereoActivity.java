@@ -71,7 +71,7 @@ public class StereoActivity extends AppCompatActivity {
                 }
             }, error -> {
                 togglePlay.toggle();
-                Toast.makeText(this, "Something went wrong when modifying this speaker", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         volumen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -90,12 +90,12 @@ public class StereoActivity extends AppCompatActivity {
                 int volume = (volumen.getProgress()/10);
                 Api.getInstance(getApplicationContext()).stereoChangeVolume(stereo.getId(), volume, response -> {
                     if (response != volume) {
-                        Toast.makeText(StereoActivity.this, "Set volume to: " + volume, Toast.LENGTH_LONG).show();
+                        Toast.makeText(StereoActivity.this, getApplicationContext().getResources().getString(R.string.setBright) + volume, Toast.LENGTH_LONG).show();
                     } else
-                        Toast.makeText(StereoActivity.this, "Didn't change volume", Toast.LENGTH_LONG).show();
+                        Toast.makeText(StereoActivity.this, getApplicationContext().getResources().getString(R.string.noChangeVolume), Toast.LENGTH_LONG).show();
                 }, error -> {
                     Log.i("MyLog", error.toString());
-                    Toast.makeText(StereoActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(StereoActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
                 });
             }
         });
