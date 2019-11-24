@@ -20,6 +20,7 @@ import com.example.smarthome.Device;
 import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
 import com.example.smarthome.TypeId;
+import com.example.smarthome.ui.DevicesViews.AlarmActivity;
 import com.example.smarthome.ui.DevicesViews.BlindActivity;
 import com.example.smarthome.ui.DevicesViews.DoorActivity;
 import com.example.smarthome.ui.DevicesViews.LampActivity;
@@ -67,8 +68,8 @@ public class RoomRecyclerViewAdapter extends RecyclerView.Adapter<RoomRecyclerVi
             intent = new Intent(context, LampActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.DOOR.getTypeId())) {
             intent = new Intent(context, DoorActivity.class);
-        //}else if (device.getTypeId().toString().equals(TypeId.ALARM.getTypeId())) {
-        //    intent = new Intent(context, AlarmActivity.class);
+        }else if (device.getTypeId().toString().equals(TypeId.ALARM.getTypeId())) {
+            intent = new Intent(context, AlarmActivity.class);
         //} else if (device.getTypeId().toString().equals(TypeId.AC.getTypeId())) {
         //    intent = new Intent(context, AcActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.BLIND.getTypeId())) {
