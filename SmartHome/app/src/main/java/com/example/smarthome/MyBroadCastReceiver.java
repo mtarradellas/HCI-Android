@@ -98,10 +98,10 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
                 }
             }
         }
-
+        String contentText = name + context.getResources().getString(R.string.ChangeMessage) + ((!event.isEmpty()) ? ": " + event : "");
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "smarthome_notification_channel")
                 .setContentTitle(context.getResources().getString(R.string.ChangeMessage))
-                .setContentText(name + context.getResources().getString(R.string.ChangeMessage2) + event)
+                .setContentText(contentText)
                 .setSmallIcon(R.drawable.lenia_sga)
                 .setColor(ContextCompat.getColor(context, R.color.colorBottomNavBg))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
