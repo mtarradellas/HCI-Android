@@ -36,6 +36,9 @@
     <string name="routines_list_empty">No routines registered. To add new routine click the options panel in the top right corner, then \'add routine\'.</string>
     <string name="routines_item_icon">routine item icon</string>
     <string name="routines_item_start">Run</string>
+    <string name="routine">Routine</string>
+    <string name="executed">executed</string>
+    <string name="failed">failed</string>
 
     <!-- Favourites View -->
     <string name="favourites_fragment">Favourites</string>
