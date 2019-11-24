@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.widget.Toast;
-
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
@@ -18,9 +16,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.example.smarthome.API.Api;
 import com.example.smarthome.API.VolleySingleton;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class MyBroadCastReceiver extends BroadcastReceiver {
@@ -104,8 +100,8 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "smarthome_notification_channel")
-                .setContentTitle("A device has been changed!")
-                .setContentText(name + " has changed its state: " + event)
+                .setContentTitle(context.getResources().getString(R.string.ChangeMessage))
+                .setContentText(name + context.getResources().getString(R.string.ChangeMessage2) + event)
                 .setSmallIcon(R.drawable.lenia_sga)
                 .setColor(ContextCompat.getColor(context, R.color.colorBottomNavBg))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
