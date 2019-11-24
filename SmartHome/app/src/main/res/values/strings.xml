@@ -5,7 +5,7 @@
     <string name="app_name">SmartHome</string>
     <string name="confirm_btn">Confirm</string>
     <string name="cancel_btn">Cancel</string>
-    <string name="loading">loading...</string>
+    <string name="loading">Loading...</string>
     <string name="on">On</string>
     <string name="off">Off</string>
 
@@ -28,12 +28,12 @@
     <string name="home_fragment">Home</string>
     <string name="home_item_icon">home room icon</string>
     <string name="home_no_connection">Could not load room list. Please check your internet connection and try again.</string>
-    <string name="home_list_empty">No rooms registered. To add new room click the options panel in the top right corner, then \'add room\'. To add a device you must first have a room for it.</string>
+    <string name="home_list_empty">No rooms registered.</string>
 
     <!-- Routines View -->
     <string name="routines_fragment">Routines</string>
     <string name="routines_no_connection">Could not load routines list. Please check your internet connection and try again.</string>
-    <string name="routines_list_empty">No routines registered. To add new routine click the options panel in the top right corner, then \'add routine\'.</string>
+    <string name="routines_list_empty">No routines registered.</string>
     <string name="routines_item_icon">routine item icon</string>
     <string name="routines_item_start">Run</string>
     <string name="routine">Routine</string>
@@ -43,14 +43,14 @@
     <!-- Favourites View -->
     <string name="favourites_fragment">Favourites</string>
     <string name="favourites_no_connection">Could not load favourites list. Please check your internet connection and try again.</string>
-    <string name="favourites_list_empty">No favourite devices registered. To add new favourite first add a device to a room and then click the heart symbol in the device settings.</string>
+    <string name="favourites_list_empty">No favourite devices registered.</string>
     <string name="favourites_item_icon">favourite device icon</string>
     <string name="favourites_item_heart">favourite heart icon</string>
 
 
     <!-- Room View -->
     <string name="room_view_title">Edit Room</string>
-    <string name="room_devices_list_empty">No devices registered. To add a new device click the options panel in the top right corner, then \'add device\'.</string>
+    <string name="room_devices_list_empty">No devices registered.</string>
     <string name="room_no_connection">Could not load devices list. Please check your internet connection and try again.</string>
     <string name="room_item_icon">device icon</string>
     <string name="room_item_heart">device heart icon</string>
@@ -166,9 +166,9 @@
     <string name="Speaker">Speaker</string>
 
     <string name="Alarm">Alarm</string>
-    <string name="ColumnsAmount">Columns amount</string>
+
     <string name="ChangeMessage">A device has been changed!</string>
-    <string name="ChangeMessage2">A device has been changed!</string>
+    <string name="ChangeMessage2"> has changed its state: </string>
 
 
 

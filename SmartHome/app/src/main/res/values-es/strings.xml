@@ -146,4 +146,13 @@
     <string name="ColorPicker">Selector de color</string>
     <string name="SuccessMsgBright">Exito! El brillo ha cambiado</string>
     <string name="SuccessMsgCol">Exito! El color ha cambiado</string>
+
+    <string name="Vacuum">Aspiradora</string>
+
+    <string name="Speaker">Parlante</string>
+
+    <string name="Alarm">Alarma</string>
+
+    <string name="ChangeMessage">Un dispositivo ha cambiado!</string>
+    <string name="ChangeMessage2"> ha cambiado su estado: </string>
 </resources>
