@@ -1,5 +1,6 @@
 package com.example.smarthome.ui.DevicesViews;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -7,12 +8,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import com.example.smarthome.AboutUsActivity;
 import com.example.smarthome.Device;
 import com.example.smarthome.MainActivity;
 import com.example.smarthome.R;
+import com.example.smarthome.SettingsActivity;
 
 public class VacuumActivity extends AppCompatActivity {
 
@@ -40,6 +45,23 @@ public class VacuumActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(vacuum.getName());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.about:
+                Intent about = new Intent(this.getApplicationContext(), AboutUsActivity.class);
+                startActivity(about);
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
