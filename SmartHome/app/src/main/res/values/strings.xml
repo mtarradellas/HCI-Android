@@ -85,6 +85,7 @@
     <string name="pause_stereo">Pause</string>
     <string name="continue_stereo">Continue</string>
     <string name="volume">Volume</string>
+    <string name="stereo_icon">Stereo icon</string>
 
     <!-- Door View  -->
     <string name="open_door">Open Door</string>
@@ -98,6 +99,11 @@
     <string name="developer_names">Santiago Reyes, Lucia Karpovich, Felipe Oliver, Manuel Tarradellas</string>
 
     <!-- Preferences -->
+    <string-array name="ArrayInterval">
+        <item>@string/Short</item>
+        <item>@string/Medium</item>
+        <item>@string/Long</item>
+    </string-array>
     <string name="Short">1 min</string>
     <string name="Medium">30 min</string>
     <string name="Long">60 min</string>
