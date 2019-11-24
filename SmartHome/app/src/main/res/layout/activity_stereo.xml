@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/stereoBacktextView"
+        android:id="@+id/stereoBackTextView"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -40,6 +40,7 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="266dp"
+            android:contentDescription="@string/stereo_icon"
             app:srcCompat="@drawable/speaker" />
 
         <Space
@@ -47,18 +48,16 @@
             android:layout_height="30dp" />
 
         <ToggleButton
-            android:id="@+id/toggleButton"
+            android:id="@+id/stereoOnToggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ToggleButton"
             android:textOff="@string/on_stereo"
             android:textOn="@string/off_stereo" />
 
         <ToggleButton
-            android:id="@+id/toggleButton3"
+            android:id="@+id/stereoPlayToggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ToggleButton"
             android:textOff="@string/pause_stereo"
             android:textOn="@string/continue_stereo" />
 

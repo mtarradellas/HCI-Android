@@ -5,10 +5,7 @@ import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -21,26 +18,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.preference.PreferenceManager;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.example.smarthome.API.Api;
-import com.example.smarthome.ui.AddRoomDialog;
-import com.example.smarthome.ui.DevicesViews.BlindActivity;
 import com.example.smarthome.ui.Favourites.FavouritesFragment;
 import com.example.smarthome.ui.Home.HomeFragment;
 import com.example.smarthome.ui.Routines.RoutinesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.io.LineNumberReader;
-import java.util.Calendar;
-
 public class MainActivity extends AppCompatActivity
-        implements BottomNavigationView.OnNavigationItemSelectedListener,
-        AddRoomDialog.AddRoomListener {
+        implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     public static final String EXTRA_DEVICE = "com.example.smarthome.EXTRA_DEVICE";
 
@@ -48,7 +34,6 @@ public class MainActivity extends AppCompatActivity
     private RoutinesFragment routinesFragment;
     private FavouritesFragment favouritesFragment;
 
-    private AddRoomDialog addRoomDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,12 +136,6 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
         return true;
-    }
-
-    @Override
-    public void applyAddRoom(String name) {
-        Room room = new Room(name, null);
-        Api.getInstance(this.getApplicationContext()).addRoom(room, response -> homeFragment.onRefresh(), error -> homeFragment.setHomeBackText("No connection"));
     }
 
     private void createNotificationChannel() {
