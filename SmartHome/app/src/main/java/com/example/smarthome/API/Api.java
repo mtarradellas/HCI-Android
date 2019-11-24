@@ -450,6 +450,50 @@ public class Api {
         return uuid;
     }
 
+
+
+    public String blindSwitch(String deviceId, boolean value, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
+        String str = (value) ? "/open" : "/close";
+        String url = URL + "devices/" + deviceId + str;
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<List<String>, Boolean> request =
+                new GsonRequest<>(Request.Method.PUT, url, new ArrayList<>(), "result", new TypeToken<Boolean>() {
+                }, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        return uuid;
+    }
+
+    public String doorOpenSwitch(String deviceId, boolean value, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
+        String str = (value) ? "/open" : "/close";
+        String url = URL + "devices/" + deviceId + str;
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<List<String>, Boolean> request =
+                new GsonRequest<>(Request.Method.PUT, url, new ArrayList<>(), "result", new TypeToken<Boolean>() {
+                }, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        return uuid;
+    }
+
+    public String doorLockSwitch(String deviceId, boolean value, Response.Listener<Boolean> listener, Response.ErrorListener errorListener) {
+        String str = (value) ? "/lock" : "/unlock";
+        String url = URL + "devices/" + deviceId + str;
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        GsonRequest<List<String>, Boolean> request =
+                new GsonRequest<>(Request.Method.PUT, url, new ArrayList<>(), "result", new TypeToken<Boolean>() {
+                }, headers, listener, errorListener);
+        String uuid = UUID.randomUUID().toString();
+        request.setTag(uuid);
+        requestQueue.add(request);
+        return uuid;
+    }
+
     //////////////////////////////////////
 
     public void cancelRequest(String uuid) {
