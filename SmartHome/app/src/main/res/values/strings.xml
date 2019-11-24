@@ -79,6 +79,13 @@
     <string name="close_blind">Close Blind</string>
     <string name="blinds_icon">Blinds icon</string>
 
+    <!-- Stereo View  -->
+    <string name="on_stereo">Turn On</string>
+    <string name="off_stereo">Turn Off</string>
+    <string name="pause_stereo">Pause</string>
+    <string name="continue_stereo">Continue</string>
+    <string name="volume">Volume</string>
+
     <!-- Door View  -->
     <string name="open_door">Open Door</string>
     <string name="close_door">Close Door</string>
