@@ -10,19 +10,22 @@ import java.util.List;
 public class Action implements Serializable, Parcelable {
     private DeviceId device; //must only have id
     private String actionName;
-    private List<String> params;//if action has no params it still has to be initialized as an empty list
+    private List<String> paramsString;
+    private List<Integer> paramsInteger;//if action has no params it still has to be initialized as an empty list
     private Meta meta;
 
-    public Action(DeviceId device, String name, List<String> params, Meta meta){
+    public Action(DeviceId device, String name, List<String> paramsString, List<Integer> paramsInteger, Meta meta){
         this(device, name);
-        this.params = params;
+        this.paramsString = paramsString;
+        this.paramsInteger = paramsInteger;
         this.meta = meta;
     }
 
     public Action(DeviceId device, String name){
         this.device = device;
         this.actionName = name;
-        this.params = new ArrayList<>();
+        this.paramsString = new ArrayList<>();
+        this.paramsInteger = new ArrayList<>();
         String string = null;
         this.meta = new Meta(string);
     }
@@ -30,7 +33,7 @@ public class Action implements Serializable, Parcelable {
     protected Action(Parcel in) {
         device = in.readParcelable(DeviceId.class.getClassLoader());
         actionName = in.readString();
-        params = in.createStringArrayList();
+        paramsString = in.createStringArrayList();
         meta = in.readParcelable(Meta.class.getClassLoader());
     }
 
@@ -57,13 +60,18 @@ public class Action implements Serializable, Parcelable {
         return device;
     }
 
-    public List<String> getParams() {
-        return params;
+    public List<String> getParamsString() {
+        return paramsString;
+    }
+
+    public List<Integer> getParamsInteger() {
+        return paramsInteger;
     }
 
     public String getActionName() {
         return actionName;
     }
+
 
     @Override
     public int describeContents() {
@@ -74,7 +82,7 @@ public class Action implements Serializable, Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeParcelable(device, flags);
         dest.writeString(actionName);
-        dest.writeStringList(params);
+        dest.writeStringList(paramsString);
         dest.writeParcelable(meta, flags);
     }
 }

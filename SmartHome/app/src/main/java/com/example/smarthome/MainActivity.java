@@ -6,9 +6,11 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +20,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.example.smarthome.API.Api;
 import com.example.smarthome.ui.Favourites.FavouritesFragment;
@@ -51,35 +56,26 @@ public class MainActivity extends AppCompatActivity
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        Log.i("MyLog", "llamando al notification thingy");
         createNotificationChannel();
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
         Intent alarmIntent = new Intent(this, MyBroadCastReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, 0);
+        long interval;
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String intervalPreference = sharedPreferences.getString("interval_preference","1 min");
+
+        if(intervalPreference.equals("1 min") ){
+            interval = 60 * 1000;
+        }else if(intervalPreference.equals("30 min")){
+            interval = 30 * 60 * 1000;
+        }else{
+            interval = 60 * 60 * 1000;
+        }
         alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 SystemClock.elapsedRealtime(),
-                60 * 1000, pendingIntent);
+                interval, pendingIntent);
 
-//        Intent intent = new Intent(this, NotificationBroadcastReceiver.class);
-//        startAlarm(alarmManager, pendingIntent);
-//        PendingIntent alarmIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
-//        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-//        long interval;
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        String intervalPreference = sharedPreferences.getString("interval_preference", "1 min");
-//        if (alarmManager == null) {
-//            Log.i("ERROR: ", "Something went wrong...");
-//            return;
-//        }
-//        if (intervalPreference.equals("1 min")) {
-//            interval = 1;
-//        } else if (intervalPreference.equals("30 min")) {
-//            interval = AlarmManager.INTERVAL_HALF_HOUR;
-//        } else {
-//            interval = AlarmManager.INTERVAL_HOUR;
-//        }
-//        alarmManager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + interval, interval, alarmIntent);
         if (savedInstanceState == null) {
             bottomNavigationView.getMenu().getItem(1).setChecked(true);
             getSupportFragmentManager().beginTransaction()
