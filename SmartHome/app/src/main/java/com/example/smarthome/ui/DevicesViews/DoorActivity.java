@@ -62,7 +62,7 @@ public class DoorActivity extends AppCompatActivity {
                 }
             }, error -> {
                 doorOpenToggle.toggle();
-                Toast.makeText(this, "Something went wrong when modifying this door", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
 
@@ -74,7 +74,7 @@ public class DoorActivity extends AppCompatActivity {
                 }
             }, error -> {
                 doorLockToggle.toggle();
-                Toast.makeText(this, "Something went wrong when modifying the lock this door", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
     }

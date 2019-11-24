@@ -93,7 +93,7 @@ public class LampActivity extends AppCompatActivity {
             }, error -> {
                 aSwitch.toggle();
                 aSwitch.setText((aSwitch.isChecked()) ? "on" : "off");
-                Toast.makeText(this, "Something went wrong when turning on this lamp", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getApplicationContext().getResources().getString(R.string.smthWrong) , Toast.LENGTH_LONG).show();
             });
         });
 
@@ -114,12 +114,12 @@ public class LampActivity extends AppCompatActivity {
                 Log.i("MyLog", "seekbar value: " + dimValue);
                 Api.getInstance(getApplicationContext()).lampSetBrightness(lamp.getId(), dimValue, response -> {
                     if (response != dimValue) {
-                        Toast.makeText(LampActivity.this, "Set brightness to: " + dimValue, Toast.LENGTH_LONG).show();
+                        Toast.makeText(LampActivity.this,  getApplicationContext().getResources().getString(R.string.setBright) + dimValue, Toast.LENGTH_LONG).show();
                     } else
-                        Toast.makeText(LampActivity.this, "Didn't change brightness", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.noChangeBright), Toast.LENGTH_LONG).show();
                 }, error -> {
                     Log.i("MyLog", error.toString());
-                    Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
                 });
             }
         });
@@ -127,71 +127,71 @@ public class LampActivity extends AppCompatActivity {
         white.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "FFEB3B", response -> {
                 if (response != null && !response.equals("FFEB3B")) {
-                    Toast.makeText(LampActivity.this, "Set color to white" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setWhite) , Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         yellow.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "FFEB3B", response -> {
                 if (response != null && !response.equals("FFEB3B")) {
-                    Toast.makeText(LampActivity.this, "Set color to yellow" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setYellow) , Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         red.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "FF0000", response -> {
                 if (response != null && !response.equals("FF0000")) {
-                    Toast.makeText(LampActivity.this, "Set color to red" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setRed), Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         green.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "8BC34A", response -> {
                 if (response != null && !response.equals("8BC34A")) {
-                    Toast.makeText(LampActivity.this, "Set color to green" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setGreen ), Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         blue.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "3F51B5", response -> {
                 if (response != null && !response.equals("3F51B5")) {
-                    Toast.makeText(LampActivity.this, "Set color to blue" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setBlue), Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         pink.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "FF2EE6", response -> {
                 if (response != null && !response.equals("FF2EE6")) {
-                    Toast.makeText(LampActivity.this, "Set color to pink" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setPink ) , Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
         purple.setOnClickListener(t -> {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "8F1AA3", response -> {
                 if (response != null && !response.equals("8F1AA3")) {
-                    Toast.makeText(LampActivity.this, "Set color to purple" , Toast.LENGTH_LONG).show();
+                    Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.setpurple ), Toast.LENGTH_LONG).show();
                 }
             }, error -> {
                 Log.i("MyLog", error.toString());
-                Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
+                Toast.makeText(LampActivity.this, getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
     }
