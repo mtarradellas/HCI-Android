@@ -50,7 +50,7 @@ public class DoorActivity extends AppCompatActivity {
             stateDoor.setStatus(response.getStatus());
             doorOpenToggle.setChecked(!stateDoor.getStatus().contains("clos"));
             stateDoor.setLock(response.getLock());
-            doorLockToggle.setChecked(!stateDoor.getLock().contains("loc"));
+            doorLockToggle.setChecked(stateDoor.getLock().contains("loc"));
             doorBackTextView.setText("");
         }, error -> doorBackTextView.setText(R.string.device_no_connection));
 
@@ -67,7 +67,7 @@ public class DoorActivity extends AppCompatActivity {
         });
 
         doorLockToggle.setOnClickListener(t -> {
-            Api.getInstance(this.getApplicationContext()).doorLockSwitch(door.getId(), doorLockToggle.isChecked(), response -> {
+            Api.getInstance(this.getApplicationContext()).doorLockSwitch(door.getId(), !doorLockToggle.isChecked(), response -> {
                 Log.i("MyLog", response.toString());
                 if (!response) {
                     doorLockToggle.toggle();
