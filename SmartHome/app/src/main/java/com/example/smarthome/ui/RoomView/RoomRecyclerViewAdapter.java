@@ -23,6 +23,7 @@ import com.example.smarthome.TypeId;
 import com.example.smarthome.ui.DevicesViews.BlindActivity;
 import com.example.smarthome.ui.DevicesViews.DoorActivity;
 import com.example.smarthome.ui.DevicesViews.LampActivity;
+import com.example.smarthome.ui.DevicesViews.StereoActivity;
 import com.example.smarthome.ui.DevicesViews.VacuumActivity;
 import com.example.smarthome.ui.Favourites.FavouritesItem;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
@@ -72,8 +73,8 @@ public class RoomRecyclerViewAdapter extends RecyclerView.Adapter<RoomRecyclerVi
         //    intent = new Intent(context, AcActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.BLIND.getTypeId())) {
             intent = new Intent(context, BlindActivity.class);
-        //} else if (device.getTypeId().toString().equals(TypeId.SPEAKER.getTypeId())) {
-        //    intent = new Intent(context, SpeakerActivity.class);
+        } else if (device.getTypeId().toString().equals(TypeId.SPEAKER.getTypeId())) {
+            intent = new Intent(context, StereoActivity.class);
         } else if (device.getTypeId().toString().equals(TypeId.VACUUM.getTypeId())) {
             intent = new Intent(context, VacuumActivity.class);
         } else {

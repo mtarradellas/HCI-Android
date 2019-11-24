@@ -73,6 +73,13 @@
     <string name="close_blind">Cerrar Persiana</string>
     <string name="blinds_icon">Icono persianas</string>
 
+    <!-- Stereo View  -->
+    <string name="on_stereo">Encender</string>
+    <string name="off_stereo">Apagar</string>
+    <string name="pause_stereo">Pausar</string>
+    <string name="continue_stereo">Continuar</string>
+    <string name="volume">Volume</string>
+
     <!-- Vista Puerta  -->
     <string name="open_door">Abrir Puerta</string>
     <string name="close_door">Cerrar Puerta</string>
