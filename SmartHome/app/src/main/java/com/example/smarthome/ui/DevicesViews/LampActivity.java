@@ -1,5 +1,6 @@
 package com.example.smarthome.ui.DevicesViews;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.example.smarthome.API.Api;
+import com.example.smarthome.AboutUsActivity;
 import com.example.smarthome.Action;
 import com.example.smarthome.Device;
 import com.example.smarthome.DeviceId;
@@ -25,6 +28,7 @@ import com.example.smarthome.DeviceStates.StateLamp;
 import com.example.smarthome.MainActivity;
 import com.example.smarthome.Meta;
 import com.example.smarthome.R;
+import com.example.smarthome.SettingsActivity;
 import com.example.smarthome.ui.Favourites.FavouritesRecyclerViewAdapter;
 import com.example.smarthome.ui.Home.HomeRecyclerViewAdapter;
 
@@ -216,6 +220,23 @@ public class LampActivity extends AppCompatActivity {
         }
         seekBar.setProgress(stateLamp.getBrightness());
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.about:
+                Intent about = new Intent(this.getApplicationContext(), AboutUsActivity.class);
+                startActivity(about);
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
