@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.DevicesViews.VacuumActivity">
 
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
@@ -14,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/vacuumBacktextView"
+        android:id="@+id/vacuumBackTextView"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -48,6 +49,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="266dp"
+                android:contentDescription="@string/vaccum_icon"
                 app:srcCompat="@drawable/vacuum" />
 
             <Space
@@ -55,25 +57,22 @@
                 android:layout_height="30dp" />
 
             <ToggleButton
-                android:id="@+id/toggleButton"
+                android:id="@+id/vacuumOnToggle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ToggleButton" />
+                android:layout_height="wrap_content" />
 
             <ToggleButton
-                android:id="@+id/toggleButton3"
+                android:id="@+id/vacuumPlayToggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="false"
-                android:text="ToggleButton"
                 android:textOff="@string/pause_vacuum"
                 android:textOn="@string/continue_vacuum" />
 
             <ToggleButton
-                android:id="@+id/toggleButton5"
+                android:id="@+id/vacuumModeToggle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ToggleButton"
                 android:textOff="@string/act_mop"
                 android:textOn="@string/act_vacuum" />
 
