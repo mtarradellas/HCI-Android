@@ -79,6 +79,13 @@
     <string name="close_blind">Close Blind</string>
     <string name="blinds_icon">Blinds icon</string>
 
+    <!-- Alarm View  -->
+    <string name="on_alarm">On</string>
+    <string name="off_alarm">Off</string>
+    <string name="home_alarm">Home Mode</string>
+    <string name="regular_alarm">Regular Mode</string>
+    <string name="alarm_icon">Alarm icon</string>
+
     <!-- Stereo View  -->
     <string name="on_stereo">Turn On</string>
     <string name="off_stereo">Turn Off</string>
@@ -170,7 +177,6 @@
     <string name="ChangeMessage">A device has been changed!</string>
     <string name="ChangeMessage2"> has changed its state</string>
 
-
     <string name="smthWrong">Something went wrong </string>
 
     <string name="setWhite">Set color to white</string>
@@ -183,4 +189,5 @@
 
     <string name="setBright">Set brightness to: </string>
     <string name="noChangeBright">Did not change brightness</string>
+
 </resources>
