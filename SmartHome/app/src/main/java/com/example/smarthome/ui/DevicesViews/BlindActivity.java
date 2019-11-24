@@ -36,6 +36,7 @@ public class BlindActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(blind.getName());
+
     }
 
     @Override

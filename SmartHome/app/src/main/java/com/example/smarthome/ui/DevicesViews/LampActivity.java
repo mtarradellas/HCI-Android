@@ -128,7 +128,7 @@ public class LampActivity extends AppCompatActivity {
             Api.getInstance(this.getApplicationContext()).lampSetColor(lamp.getId(), "FFEB3B", response -> {
                 if (response != null && !response.equals("FFEB3B")) {
                     Toast.makeText(LampActivity.this, "Set color to white" , Toast.LENGTH_LONG).show();
-                } 
+                }
             }, error -> {
                 Log.i("MyLog", error.toString());
                 Toast.makeText(LampActivity.this, "Something went wrong ", Toast.LENGTH_LONG).show();
