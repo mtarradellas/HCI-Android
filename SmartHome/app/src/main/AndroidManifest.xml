@@ -14,8 +14,9 @@
         android:roundIcon="@drawable/lenia_sga"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.DevicesViews.StereoActivity"></activity>
-        <activity android:name=".ui.DevicesViews.VacuumActivity"></activity>
+        <activity android:name=".ui.DevicesViews.AlarmActivity"></activity>
+        <activity android:name=".ui.DevicesViews.StereoActivity" />
+        <activity android:name=".ui.DevicesViews.VacuumActivity" />
         <activity android:name=".ui.DevicesViews.BlindActivity" />
         <activity android:name=".ui.DevicesViews.DoorActivity" />
         <activity android:name=".ui.DevicesViews.LampActivity" />

@@ -73,6 +73,13 @@
     <string name="close_blind">Cerrar Persiana</string>
     <string name="blinds_icon">Icono persianas</string>
 
+    <!-- Vista Alarma  -->
+    <string name="on_alarm">Encender</string>
+    <string name="off_alarm">Apagar</string>
+    <string name="home_alarm">Modo Casa</string>
+    <string name="regular_alarm">Modo Regular</string>
+    <string name="alarm_icon">Icono Alarma</string>
+
     <!-- Stereo View  -->
     <string name="on_stereo">Encender</string>
     <string name="off_stereo">Apagar</string>
