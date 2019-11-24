@@ -59,7 +59,7 @@ public class BlindActivity extends AppCompatActivity {
 
             }, error -> {
                 toogle.toggle();
-                Toast.makeText(this, "Something went wrong when modifying this blind", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,getApplicationContext().getResources().getString(R.string.smthWrong), Toast.LENGTH_LONG).show();
             });
         });
     }

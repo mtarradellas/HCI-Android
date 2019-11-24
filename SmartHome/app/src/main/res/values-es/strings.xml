@@ -35,6 +35,10 @@
     <string name="routines_list_empty">No hay rutinas registradas.</string>
     <string name="routines_item_icon">Icono de rutina</string>
     <string name="routines_item_start">Ejecutar</string>
+    <string name="routine">Rutina</string>
+    <string name="executed">ejecutada</string>
+    <string name="failed">fallo</string>
+
 
     <!-- Vista Favoritos -->
     <string name="favourites_fragment">Favoritos</string>
@@ -79,6 +83,7 @@
     <string name="pause_stereo">Pausar</string>
     <string name="continue_stereo">Continuar</string>
     <string name="volume">Volume</string>
+    <string name="stereo_icon">Icono de Parlante</string>
 
     <!-- Vista Puerta  -->
     <string name="open_door">Abrir Puerta</string>
@@ -155,4 +160,18 @@
 
     <string name="ChangeMessage">Un dispositivo ha cambiado!</string>
     <string name="ChangeMessage2"> ha cambiado su estado</string>
+
+    <string name="smthWrong">Algo salio mal </string>
+
+    <string name="setWhite">Se ha cambiado el color a blanco</string>
+    <string name="setYellow">Se ha cambiado el color a amarillo</string>
+    <string name="setRed">Se ha cambiado el color a rojo</string>
+    <string name="setpurple">Se ha cambiado el color a violeta</string>
+    <string name="setGreen">Se ha cambiado el color a verde</string>
+    <string name="setBlue">Se ha cambiado el color a azul</string>
+    <string name="setPink">Se ha cambiado el color a rosa</string>
+
+    <string name="setBright">Se ha cambiado el brillo a:  </string>
+    <string name="noChangeBright">No cambio el brillo</string>
+
 </resources>

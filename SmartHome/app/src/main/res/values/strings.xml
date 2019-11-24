@@ -171,5 +171,16 @@
     <string name="ChangeMessage2"> has changed its state</string>
 
 
+    <string name="smthWrong">Something went wrong </string>
 
+    <string name="setWhite">Set color to white</string>
+    <string name="setYellow">Set color to yellow</string>
+    <string name="setRed">Set color to red</string>
+    <string name="setpurple">Set color to purple</string>
+    <string name="setGreen">Set color to green</string>
+    <string name="setBlue">Set color to blue</string>
+    <string name="setPink">Set color to pink</string>
+
+    <string name="setBright">Set brightness to: </string>
+    <string name="noChangeBright">Did not change brightness</string>
 </resources>
