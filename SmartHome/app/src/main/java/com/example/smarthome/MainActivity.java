@@ -90,10 +90,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
-//                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.about:
-                about_onClick();
+                Intent about = new Intent(this.getApplicationContext(), AboutUsActivity.class);
+                startActivity(about);
                 Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
                 return true;
             default:
@@ -156,10 +156,5 @@ public class MainActivity extends AppCompatActivity
         alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, 0, pendingIntent);
 
 
-    }
-
-    public void about_onClick() {
-        Intent about = new Intent(this.getApplicationContext(), AboutUsActivity.class);
-        startActivity(about);
     }
 }

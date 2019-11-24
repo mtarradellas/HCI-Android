@@ -98,7 +98,7 @@ public class MyBroadCastReceiver extends BroadcastReceiver {
                 }
             }
         }
-        String contentText = name + context.getResources().getString(R.string.ChangeMessage) + ((!event.isEmpty()) ? ": " + event : "");
+        String contentText = name + context.getResources().getString(R.string.ChangeMessage2) + ((!event.isEmpty()) ? ": " + event : "");
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "smarthome_notification_channel")
                 .setContentTitle(context.getResources().getString(R.string.ChangeMessage))
                 .setContentText(contentText)
